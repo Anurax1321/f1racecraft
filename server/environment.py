@@ -88,6 +88,12 @@ class F1StrategistEnvironment(Environment[F1Action, F1Observation, F1State]):
             scenario["seed"] = seed
         if options.get("seed") is not None:
             scenario["seed"] = int(options["seed"])
+        # Optional race-length override — accepts int (laps) or str ("short"/"medium"/"long").
+        race_length = options.get("race_length")
+        if race_length is not None:
+            from server.generator import RACE_LENGTHS, scale_scenario_to_length
+            target = RACE_LENGTHS[race_length] if isinstance(race_length, str) else int(race_length)
+            scenario = scale_scenario_to_length(scenario, target)
         self._reset_internal(episode_id=episode_id)
         self._load(scenario)
         hints = PostmortemMemory.retrieve(self._scenario["scenario_family"], k=2)

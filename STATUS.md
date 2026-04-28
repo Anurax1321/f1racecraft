@@ -9,15 +9,33 @@
 ## Cursor
 
 ```
-Phase:        1 (Full race length) — ready to start
-Sub-step:     1.1 (parametrize race length in scenarios.py and generator.py)
-Last commit:  174be7c on origin/dev + origin/main
-Local tag:    v0.2-foundation (NOT yet pushed to origin — user action)
-Next action:  user pushes tag, then I start sub-step 1.1
-Blocked on:   user to run `git push origin v0.2-foundation`
+Phase:        1 (Full race length)
+Sub-step:     1.2 (next — add 3 long-race scenario families)
+Last commit:  on origin/dev (1.1 implemented; see "Phase 1 sub-step status")
+Next action:  Start 1.2 — hand-author monaco_full_gp, silverstone_full_gp, spa_full_wet
+Blocked on:   nothing
 Last session: 2026-04-28
 Owner:        Anurag (solo personal project, post-hackathon)
 ```
+
+## Phase 1 sub-step status
+
+| # | Sub-step | Status |
+|---|---|---|
+| 1.1 | Parametrize race length in scenarios.py + generator.py | ✅ done — `RACE_LENGTHS={short:12,medium:25,long:55}`, `scale_scenario_to_length()`, `race_length` param on generate() and env.reset() |
+| 1.2 | Add 3 long-race scenario families | ⬜ |
+| 1.3 | Re-tune reward shaping | ⬜ |
+| 1.4 | Verify expert solver ≥0.85 on long races | ⬜ |
+| 1.5 | Run grpo_v2 on long races (baseline measurement) | ⬜ |
+| 1.6 | Tag `v0.3-fullrace` | ⬜ |
+
+## Known limitation from 1.1
+
+Linear fuel scaling gives unrealistic starting fuel (e.g. 458 kg for a 55-lap
+weather_roulette stretched from a 12-lap original). Functionally safe (extra
+fuel can't break anything) but not realistic. Hand-authored scenarios in 1.2
+will set proper fuel values; ablation/training will use those, not stretched
+short scenarios.
 
 ## Phase 0 — closed ✅
 
