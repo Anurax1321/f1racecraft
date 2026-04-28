@@ -1,0 +1,274 @@
+{
+  "random": {
+    "dry_strategy_sprint": {
+      "mean": 0.4,
+      "std": 0.124,
+      "scores": [
+        0.355,
+        0.34,
+        0.41,
+        0.63,
+        0.265
+      ]
+    },
+    "weather_roulette": {
+      "mean": 0.3445,
+      "std": 0.0291,
+      "scores": [
+        0.3475,
+        0.3025,
+        0.3325,
+        0.3475,
+        0.3925
+      ]
+    },
+    "late_safety_car": {
+      "mean": 0.332,
+      "std": 0.0291,
+      "scores": [
+        0.335,
+        0.29,
+        0.32,
+        0.335,
+        0.38
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.209,
+      "std": 0.024,
+      "scores": [
+        0.19,
+        0.21,
+        0.175,
+        0.235,
+        0.235
+      ]
+    },
+    "virtual_safety_car_window": {
+      "mean": 0.3289,
+      "std": 0.0183,
+      "scores": [
+        0.3,
+        0.34,
+        0.3146,
+        0.345,
+        0.345
+      ]
+    },
+    "tyre_cliff_management": {
+      "mean": 0.204,
+      "std": 0.0203,
+      "scores": [
+        0.18,
+        0.18,
+        0.21,
+        0.225,
+        0.225
+      ]
+    }
+  },
+  "untrained": {
+    "dry_strategy_sprint": {
+      "mean": 0.509,
+      "std": 0.0551,
+      "scores": [
+        0.445,
+        0.5675,
+        0.52,
+        0.5675,
+        0.445
+      ]
+    },
+    "weather_roulette": {
+      "mean": 0.414,
+      "std": 0.073,
+      "scores": [
+        0.3775,
+        0.3775,
+        0.56,
+        0.3775,
+        0.3775
+      ]
+    },
+    "late_safety_car": {
+      "mean": 0.525,
+      "std": 0.14,
+      "scores": [
+        0.595,
+        0.245,
+        0.595,
+        0.595,
+        0.595
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.269,
+      "std": 0.008,
+      "scores": [
+        0.285,
+        0.265,
+        0.265,
+        0.265,
+        0.265
+      ]
+    },
+    "virtual_safety_car_window": {
+      "mean": 0.375,
+      "std": 0.0,
+      "scores": [
+        0.375,
+        0.375,
+        0.375,
+        0.375,
+        0.375
+      ]
+    },
+    "tyre_cliff_management": {
+      "mean": 0.3978,
+      "std": 0.1437,
+      "scores": [
+        0.255,
+        0.5149,
+        0.5149,
+        0.512,
+        0.192
+      ]
+    }
+  },
+  "trained": {
+    "dry_strategy_sprint": {
+      "mean": 0.52,
+      "std": 0.0,
+      "scores": [
+        0.52,
+        0.52,
+        0.52,
+        0.52,
+        0.52
+      ]
+    },
+    "weather_roulette": {
+      "mean": 0.965,
+      "std": 0.04,
+      "scores": [
+        0.985,
+        0.985,
+        0.985,
+        0.885,
+        0.985
+      ]
+    },
+    "late_safety_car": {
+      "mean": 0.645,
+      "std": 0.0,
+      "scores": [
+        0.645,
+        0.645,
+        0.645,
+        0.645,
+        0.645
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.555,
+      "std": 0.0245,
+      "scores": [
+        0.585,
+        0.535,
+        0.535,
+        0.535,
+        0.585
+      ]
+    },
+    "virtual_safety_car_window": {
+      "mean": 0.4708,
+      "std": 0.1092,
+      "scores": [
+        0.3371,
+        0.56,
+        0.56,
+        0.56,
+        0.3371
+      ]
+    },
+    "tyre_cliff_management": {
+      "mean": 0.5516,
+      "std": 0.0192,
+      "scores": [
+        0.5149,
+        0.557,
+        0.572,
+        0.557,
+        0.557
+      ]
+    }
+  },
+  "expert": {
+    "dry_strategy_sprint": {
+      "mean": 0.8395,
+      "std": 0.091,
+      "scores": [
+        0.6575,
+        0.885,
+        0.885,
+        0.885,
+        0.885
+      ]
+    },
+    "weather_roulette": {
+      "mean": 0.95,
+      "std": 0.0,
+      "scores": [
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ]
+    },
+    "late_safety_car": {
+      "mean": 0.935,
+      "std": 0.0,
+      "scores": [
+        0.935,
+        0.935,
+        0.935,
+        0.935,
+        0.935
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.965,
+      "std": 0.0,
+      "scores": [
+        0.965,
+        0.965,
+        0.965,
+        0.965,
+        0.965
+      ]
+    },
+    "virtual_safety_car_window": {
+      "mean": 0.965,
+      "std": 0.0,
+      "scores": [
+        0.965,
+        0.965,
+        0.965,
+        0.965,
+        0.965
+      ]
+    },
+    "tyre_cliff_management": {
+      "mean": 0.965,
+      "std": 0.0,
+      "scores": [
+        0.965,
+        0.965,
+        0.965,
+        0.965,
+        0.965
+      ]
+    }
+  }
+}

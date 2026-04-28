@@ -1,0 +1,128 @@
+{
+  "Austin": {
+    "base_lap_time_s": 103.01,
+    "lap_time_p25": 101.289,
+    "lap_time_p75": 105.308,
+    "median_pit_loss_s": 24.433,
+    "n_samples": 9762
+  },
+  "Budapest": {
+    "base_lap_time_s": 84.995,
+    "lap_time_p25": 83.295,
+    "lap_time_p75": 88.068,
+    "median_pit_loss_s": 22.203,
+    "n_samples": 14162
+  },
+  "Catalunya": {
+    "base_lap_time_s": 86.552,
+    "lap_time_p25": 82.631,
+    "lap_time_p75": 91.934,
+    "median_pit_loss_s": 22.443,
+    "n_samples": 13607
+  },
+  "Hockenheim": {
+    "base_lap_time_s": 82.803,
+    "lap_time_p25": 80.696,
+    "lap_time_p75": 87.209,
+    "median_pit_loss_s": 20.092,
+    "n_samples": 5030
+  },
+  "Melbourne": {
+    "base_lap_time_s": 90.365,
+    "lap_time_p25": 85.168,
+    "lap_time_p75": 94.173,
+    "median_pit_loss_s": 22.414,
+    "n_samples": 8513
+  },
+  "Monaco": {
+    "base_lap_time_s": 79.793,
+    "lap_time_p25": 78.008,
+    "lap_time_p75": 82.942,
+    "median_pit_loss_s": 25.562,
+    "n_samples": 13775
+  },
+  "Montreal": {
+    "base_lap_time_s": 78.788,
+    "lap_time_p25": 77.311,
+    "lap_time_p75": 80.847,
+    "median_pit_loss_s": 24.015,
+    "n_samples": 11383
+  },
+  "Monza": {
+    "base_lap_time_s": 87.154,
+    "lap_time_p25": 85.858,
+    "lap_time_p75": 89.328,
+    "median_pit_loss_s": 24.779,
+    "n_samples": 10682
+  },
+  "Sakhir": {
+    "base_lap_time_s": 98.012,
+    "lap_time_p25": 95.984,
+    "lap_time_p75": 100.611,
+    "median_pit_loss_s": 25.069,
+    "n_samples": 12947
+  },
+  "Sepang": {
+    "base_lap_time_s": 104.931,
+    "lap_time_p25": 99.433,
+    "lap_time_p75": 108.534,
+    "median_pit_loss_s": 25.044,
+    "n_samples": 3984
+  },
+  "Shanghai": {
+    "base_lap_time_s": 102.921,
+    "lap_time_p25": 100.112,
+    "lap_time_p75": 105.526,
+    "median_pit_loss_s": 23.103,
+    "n_samples": 7464
+  },
+  "Silverstone": {
+    "base_lap_time_s": 94.373,
+    "lap_time_p25": 92.543,
+    "lap_time_p75": 100.266,
+    "median_pit_loss_s": 29.243,
+    "n_samples": 10859
+  },
+  "Sochi": {
+    "base_lap_time_s": 102.297,
+    "lap_time_p25": 100.541,
+    "lap_time_p75": 104.651,
+    "median_pit_loss_s": 30.184,
+    "n_samples": 7463
+  },
+  "Spa": {
+    "base_lap_time_s": 113.392,
+    "lap_time_p25": 110.495,
+    "lap_time_p75": 116.163,
+    "median_pit_loss_s": 23.288,
+    "n_samples": 7713
+  },
+  "Spielberg": {
+    "base_lap_time_s": 70.857,
+    "lap_time_p25": 69.761,
+    "lap_time_p75": 72.595,
+    "median_pit_loss_s": 21.871,
+    "n_samples": 16847
+  },
+  "Suzuka": {
+    "base_lap_time_s": 98.908,
+    "lap_time_p25": 96.86,
+    "lap_time_p75": 103.805,
+    "median_pit_loss_s": 24.181,
+    "n_samples": 8115
+  },
+  "YasMarina": {
+    "base_lap_time_s": 103.922,
+    "lap_time_p25": 91.047,
+    "lap_time_p75": 107.349,
+    "median_pit_loss_s": 22.054,
+    "n_samples": 11444
+  },
+  "Zandvoort": {
+    "base_lap_time_s": 76.814,
+    "lap_time_p25": 75.815,
+    "lap_time_p75": 78.106,
+    "median_pit_loss_s": 20.387,
+    "n_samples": 5501
+  }
+}

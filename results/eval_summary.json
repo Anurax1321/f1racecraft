@@ -1,0 +1,186 @@
+{
+  "random": {
+    "dry_strategy_sprint": {
+      "mean": 0.4,
+      "std": 0.124,
+      "scores": [
+        0.355,
+        0.34,
+        0.41,
+        0.63,
+        0.265
+      ]
+    },
+    "weather_roulette": {
+      "mean": 0.3445,
+      "std": 0.0291,
+      "scores": [
+        0.3475,
+        0.3025,
+        0.3325,
+        0.3475,
+        0.3925
+      ]
+    },
+    "late_safety_car": {
+      "mean": 0.332,
+      "std": 0.0291,
+      "scores": [
+        0.335,
+        0.29,
+        0.32,
+        0.335,
+        0.38
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.209,
+      "std": 0.024,
+      "scores": [
+        0.19,
+        0.21,
+        0.175,
+        0.235,
+        0.235
+      ]
+    }
+  },
+  "untrained": {
+    "dry_strategy_sprint": {
+      "mean": 0.509,
+      "std": 0.0551,
+      "scores": [
+        0.445,
+        0.5675,
+        0.52,
+        0.5675,
+        0.445
+      ]
+    },
+    "weather_roulette": {
+      "mean": 0.414,
+      "std": 0.073,
+      "scores": [
+        0.3775,
+        0.3775,
+        0.56,
+        0.3775,
+        0.3775
+      ]
+    },
+    "late_safety_car": {
+      "mean": 0.525,
+      "std": 0.14,
+      "scores": [
+        0.595,
+        0.245,
+        0.595,
+        0.595,
+        0.595
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.269,
+      "std": 0.008,
+      "scores": [
+        0.285,
+        0.265,
+        0.265,
+        0.265,
+        0.265
+      ]
+    }
+  },
+  "trained": {
+    "dry_strategy_sprint": {
+      "mean": 0.52,
+      "std": 0.0,
+      "scores": [
+        0.52,
+        0.52,
+        0.52,
+        0.52,
+        0.52
+      ]
+    },
+    "weather_roulette": {
+      "mean": 0.56,
+      "std": 0.0,
+      "scores": [
+        0.56,
+        0.56,
+        0.56,
+        0.56,
+        0.56
+      ]
+    },
+    "late_safety_car": {
+      "mean": 0.55,
+      "std": 0.0,
+      "scores": [
+        0.55,
+        0.55,
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.52,
+      "std": 0.0,
+      "scores": [
+        0.52,
+        0.52,
+        0.52,
+        0.52,
+        0.52
+      ]
+    }
+  },
+  "expert": {
+    "dry_strategy_sprint": {
+      "mean": 0.8395,
+      "std": 0.091,
+      "scores": [
+        0.6575,
+        0.885,
+        0.885,
+        0.885,
+        0.885
+      ]
+    },
+    "weather_roulette": {
+      "mean": 0.95,
+      "std": 0.0,
+      "scores": [
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ]
+    },
+    "late_safety_car": {
+      "mean": 0.935,
+      "std": 0.0,
+      "scores": [
+        0.935,
+        0.935,
+        0.935,
+        0.935,
+        0.935
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.965,
+      "std": 0.0,
+      "scores": [
+        0.965,
+        0.965,
+        0.965,
+        0.965,
+        0.965
+      ]
+    }
+  }
+}

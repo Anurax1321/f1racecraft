@@ -1,0 +1,294 @@
+{
+  "_meta": {
+    "schema_version": 1,
+    "comment": "Hand-curated track metadata. base_lap_time_s is a starting estimate; calibrate_opponent_pace.py overrides with Kaggle-derived medians where available. Character labels drive tyre-wear multipliers in physics.py and are NOT derived from data. drs_zones use distance_m along the centerline (start, end); empty list = unknown / Phase 5 fill-in.",
+    "character_options": [
+      "power",
+      "balanced",
+      "downforce",
+      "street",
+      "weather_prone"
+    ],
+    "f1_calendar_2024": [
+      "Sakhir",
+      "Sochi",
+      "Melbourne",
+      "Suzuka",
+      "Shanghai",
+      "Monaco",
+      "Catalunya",
+      "Spielberg",
+      "Silverstone",
+      "Budapest",
+      "Spa",
+      "Monza",
+      "Singapore",
+      "Austin",
+      "MexicoCity",
+      "SaoPaulo",
+      "YasMarina",
+      "Zandvoort",
+      "Sakhir"
+    ]
+  },
+  "Austin": {
+    "character": "balanced",
+    "base_lap_time_s": 96.0,
+    "pit_loss_green_s": 21.5,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "USA",
+    "is_f1": true,
+    "comment": "Circuit of the Americas. Long uphill T1 + esses + back-straight DRS."
+  },
+  "BrandsHatch": {
+    "character": "street",
+    "base_lap_time_s": 80.0,
+    "pit_loss_green_s": 18.5,
+    "pit_loss_sc_s": 5.5,
+    "drs_zones": [],
+    "country": "UK",
+    "is_f1": false,
+    "comment": "DTM circuit. Used as our street/SC-prone substitute for Monaco (which is missing from the dataset)."
+  },
+  "Budapest": {
+    "character": "downforce",
+    "base_lap_time_s": 76.5,
+    "pit_loss_green_s": 21.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Hungary",
+    "is_f1": true,
+    "comment": "Hungaroring. Twisty, low-speed, high-downforce. Hot races stress mediums."
+  },
+  "Catalunya": {
+    "character": "balanced",
+    "base_lap_time_s": 78.0,
+    "pit_loss_green_s": 22.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Spain",
+    "is_f1": true,
+    "comment": "Reference circuit for car balance and tyre management."
+  },
+  "Hockenheim": {
+    "character": "balanced",
+    "base_lap_time_s": 73.5,
+    "pit_loss_green_s": 21.5,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Germany",
+    "is_f1": false,
+    "comment": "Rotated off F1 calendar in 2019; medium-character circuit."
+  },
+  "IMS": {
+    "character": "power",
+    "base_lap_time_s": 80.0,
+    "pit_loss_green_s": 22.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "USA",
+    "is_f1": false,
+    "comment": "Indianapolis Motor Speedway road course (IndyCar)."
+  },
+  "Melbourne": {
+    "character": "balanced",
+    "base_lap_time_s": 78.5,
+    "pit_loss_green_s": 21.5,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Australia",
+    "is_f1": true,
+    "comment": "Albert Park. Post-2022 layout has more high-speed flow."
+  },
+  "MexicoCity": {
+    "character": "power",
+    "base_lap_time_s": 78.0,
+    "pit_loss_green_s": 21.5,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Mexico",
+    "is_f1": true,
+    "comment": "Autodromo Hermanos Rodriguez. High altitude reduces aero load AND engine power."
+  },
+  "Monaco": {
+    "character": "street",
+    "base_lap_time_s": 73.2,
+    "pit_loss_green_s": 18.0,
+    "pit_loss_sc_s": 5.5,
+    "drs_zones": [],
+    "country": "Monaco",
+    "is_f1": true,
+    "comment": "Circuit de Monaco. Manually added two-column centerline; width defaults are filled by server.track."
+  },
+  "Montreal": {
+    "character": "power",
+    "base_lap_time_s": 73.5,
+    "pit_loss_green_s": 21.5,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Canada",
+    "is_f1": true,
+    "comment": "Circuit Gilles Villeneuve. Wall of Champions. Heavy braking, low downforce setup."
+  },
+  "Monza": {
+    "character": "power",
+    "base_lap_time_s": 81.0,
+    "pit_loss_green_s": 23.0,
+    "pit_loss_sc_s": 8.0,
+    "drs_zones": [],
+    "country": "Italy",
+    "is_f1": true,
+    "comment": "Temple of speed. Lowest downforce of the calendar. Three DRS zones."
+  },
+  "MoscowRaceway": {
+    "character": "balanced",
+    "base_lap_time_s": 110.0,
+    "pit_loss_green_s": 22.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Russia",
+    "is_f1": false,
+    "comment": "DTM circuit. Long lap; included for procedural-generator coverage."
+  },
+  "Norisring": {
+    "character": "street",
+    "base_lap_time_s": 49.0,
+    "pit_loss_green_s": 17.0,
+    "pit_loss_sc_s": 5.0,
+    "drs_zones": [],
+    "country": "Germany",
+    "is_f1": false,
+    "comment": "DTM street circuit. Very short (~2.3 km). Low overtaking like Monaco."
+  },
+  "Nuerburgring": {
+    "character": "balanced",
+    "base_lap_time_s": 95.0,
+    "pit_loss_green_s": 22.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Germany",
+    "is_f1": false,
+    "comment": "GP circuit only (NOT the Nordschleife). Last F1 race 2020."
+  },
+  "Oschersleben": {
+    "character": "balanced",
+    "base_lap_time_s": 85.0,
+    "pit_loss_green_s": 20.0,
+    "pit_loss_sc_s": 6.0,
+    "drs_zones": [],
+    "country": "Germany",
+    "is_f1": false,
+    "comment": "DTM circuit. Included for diversity."
+  },
+  "Sakhir": {
+    "character": "power",
+    "base_lap_time_s": 93.0,
+    "pit_loss_green_s": 22.5,
+    "pit_loss_sc_s": 7.5,
+    "drs_zones": [],
+    "country": "Bahrain",
+    "is_f1": true,
+    "comment": "Bahrain International Circuit. Abrasive surface eats tyres."
+  },
+  "SaoPaulo": {
+    "character": "power",
+    "base_lap_time_s": 71.0,
+    "pit_loss_green_s": 21.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Brazil",
+    "is_f1": true,
+    "comment": "Interlagos. Anti-clockwise. Famous for unpredictable weather."
+  },
+  "Sepang": {
+    "character": "balanced",
+    "base_lap_time_s": 96.0,
+    "pit_loss_green_s": 22.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Malaysia",
+    "is_f1": false,
+    "comment": "Off F1 calendar since 2017. Heavy rain-prone; humid."
+  },
+  "Shanghai": {
+    "character": "balanced",
+    "base_lap_time_s": 95.0,
+    "pit_loss_green_s": 21.5,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "China",
+    "is_f1": true,
+    "comment": "Shanghai International Circuit. Returned to F1 calendar 2024."
+  },
+  "Silverstone": {
+    "character": "balanced",
+    "base_lap_time_s": 88.0,
+    "pit_loss_green_s": 22.5,
+    "pit_loss_sc_s": 7.5,
+    "drs_zones": [],
+    "country": "UK",
+    "is_f1": true,
+    "comment": "Home of British GP. High-speed flowing layout. Tyre-stress heavy."
+  },
+  "Sochi": {
+    "character": "balanced",
+    "base_lap_time_s": 95.0,
+    "pit_loss_green_s": 21.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Russia",
+    "is_f1": false,
+    "comment": "Off F1 calendar since 2022."
+  },
+  "Spa": {
+    "character": "weather_prone",
+    "base_lap_time_s": 106.0,
+    "pit_loss_green_s": 23.0,
+    "pit_loss_sc_s": 8.0,
+    "drs_zones": [],
+    "country": "Belgium",
+    "is_f1": true,
+    "comment": "Spa-Francorchamps. Longest circuit on calendar. Famous for one-end-rains-other-end-doesn't weather."
+  },
+  "Spielberg": {
+    "character": "power",
+    "base_lap_time_s": 65.0,
+    "pit_loss_green_s": 20.5,
+    "pit_loss_sc_s": 6.5,
+    "drs_zones": [],
+    "country": "Austria",
+    "is_f1": true,
+    "comment": "Red Bull Ring. Short lap, mountain weather, ten corners."
+  },
+  "Suzuka": {
+    "character": "balanced",
+    "base_lap_time_s": 93.0,
+    "pit_loss_green_s": 22.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Japan",
+    "is_f1": true,
+    "comment": "Figure-eight layout. Typhoon-prone (used to schedule wet races)."
+  },
+  "YasMarina": {
+    "character": "downforce",
+    "base_lap_time_s": 84.0,
+    "pit_loss_green_s": 21.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "UAE",
+    "is_f1": true,
+    "comment": "Abu Dhabi. Post-2021 reconfiguration shortened the lap."
+  },
+  "Zandvoort": {
+    "character": "downforce",
+    "base_lap_time_s": 71.0,
+    "pit_loss_green_s": 21.0,
+    "pit_loss_sc_s": 7.0,
+    "drs_zones": [],
+    "country": "Netherlands",
+    "is_f1": true,
+    "comment": "Banked corners; high downforce; coastal-rain-prone."
+  }
+}

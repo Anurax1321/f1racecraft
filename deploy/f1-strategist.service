@@ -1,0 +1,27 @@
+[Unit]
+Description=F1 Strategist OpenEnv server (uvicorn)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=anurag
+Group=anurag
+WorkingDirectory=/home/anurag/projects/F1_Simulator_OpenENV
+Environment=HOME=/home/anurag
+Environment=PATH=/home/anurag/.virtualenvs/f1-strategist/bin:/usr/local/bin:/usr/bin:/bin
+
+ExecStartPre=-/usr/bin/git -C /home/anurag/projects/F1_Simulator_OpenENV fetch --quiet origin
+ExecStartPre=-/usr/bin/git -C /home/anurag/projects/F1_Simulator_OpenENV pull --ff-only --quiet
+ExecStart=/home/anurag/.virtualenvs/f1-strategist/bin/python -m uvicorn server.app:app --host 127.0.0.1 --port 8765
+
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+KillMode=mixed
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

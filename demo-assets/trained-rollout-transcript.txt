@@ -1,0 +1,55 @@
+WEATHER_ROULETTE seed=0 — SFT+GRPO (grpo_v2) trained vs random baseline
+(Real LLM forward pass, env.step() at every lap, deterministic env scoring)
+
+============================================================
+UNTRAINED (random command sampling — score 0.347):
+============================================================
+  lap 00: ASSESS_UNDERCUT_WINDOW                | P5 medium rain=0.00
+  lap 01: ASSESS_UNDERCUT_WINDOW                | P6 medium rain=0.00
+  lap 02: STAY_OUT                              | P6 medium rain=0.00
+  lap 03: INSPECT_TYRE_DEGRADATION              | P6 medium rain=0.00
+  lap 04: PIT_NOW soft                          | P6 medium rain=0.00   <- WRONG: pitted to softs in dry, no rain yet
+  lap 05: INSPECT_FUEL_MARGIN                   | P6 soft rain=0.00
+  lap 06: ASSESS_UNDERCUT_WINDOW                | P6 soft rain=0.15     <- rain starts, still on softs
+  lap 07: INSPECT_TYRE_DEGRADATION              | P6 soft rain=0.45     <- RAIN PEAK, still on softs
+  lap 08: INSPECT_FUEL_MARGIN                   | P6 soft rain=0.50
+  lap 09: REQUEST_FORECAST                      | P6 soft rain=0.40
+  lap 10: PIT_NOW hard                          | P6 soft rain=0.20     <- WRONG: hard in damp conditions
+  lap 11: SET_MODE conserve                     | P6 hard rain=0.18
+
+  Final position: P6 (started P5 -> finished P6)
+  Final score: 0.347
+
+
+============================================================
+TRAINED (grpo_v2, greedy decode, score 0.985):
+============================================================
+  lap 00: REQUEST_FORECAST                      | P5 medium rain=0.00   <- investigates weather first
+  lap 01: REQUEST_INFO opponents                 | P6 medium rain=0.00
+  lap 02: REQUEST_FORECAST                      | P6 medium rain=0.00   <- second forecast read
+  lap 03: CHECK_OPPONENT_STRATEGY 1             | P6 medium rain=0.00   <- inspects rival
+  lap 04: REQUEST_INFO weather                  | P6 medium rain=0.00
+  lap 05: REQUEST_INFO weather                  | P6 medium rain=0.00   <- waiting for rain signal
+  lap 06: PIT_NOW inter                         | P6 medium rain=0.15   <- CORRECT: pits as rain begins
+  lap 07: MANAGE_TYRE_TEMP warm                 | P6 inter rain=0.45    <- on inters at rain peak
+  lap 08: SET_MODE race                         | P4 inter rain=0.50    <- gained 2 positions
+  lap 09: RADIO_DRIVER "Stay calm. The inter
+           switch is optimal around the rain
+           peak. Hold the gap on #16."          | P4 inter rain=0.40    <- comms call
+  lap 10: ASSESS_UNDERCUT_WINDOW                | P4 inter rain=0.20    <- monitors threat
+  lap 11: STAY_OUT                              | P4 inter rain=0.18
+
+  Final position: P4 (started P5 -> finished P4, gained 2 positions at rain peak)
+  Final score: 0.985
+
+============================================================
+DELTA: +0.638 on this seed.
+Average across 5 weather-roulette seeds: trained 0.787 vs untrained 0.414 (delta +0.373).
+============================================================
+
+Notes:
+- Both rollouts are real, deterministic, reproducible (same seed -> same env trajectory).
+- Trained model uses 4 investigation actions before committing to the pit. The shaped
+  reward for inspection-before-pit makes this part of the policy.
+- The rain probability cone is genuinely hidden -- the model has to call REQUEST_FORECAST
+  to read it. Untrained random sampling rarely calls it in time.

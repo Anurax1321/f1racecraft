@@ -1,0 +1,11 @@
+[Unit]
+Description=F1 Strategist auto-update check
+After=network-online.target f1-strategist.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+Environment=HOME=/home/anurag
+Environment=GIT_SSH_COMMAND=ssh -i /home/anurag/.ssh/opstwin -o StrictHostKeyChecking=no -o UserKnownHostsFile=/home/anurag/.ssh/known_hosts
+ExecStart=/usr/bin/sudo -u anurag --preserve-env=GIT_SSH_COMMAND,HOME /home/anurag/projects/F1_Simulator_OpenENV/deploy/f1-strategist-update.sh

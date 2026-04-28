@@ -1,0 +1,10 @@
+https://deltasthic-f1-strategist.hf.space/blog
+
+# Notes:
+# - Primary "published" location: the /blog endpoint on the HF Space, which renders blog.md as HTML.
+#   This is publicly accessible and counts as "blog published" for the W3 hackathon requirement.
+# - Source markdown: blog.md at the repo root.
+# - HF Hub Blog (huggingface.co/blog/...) post — optional. If you want one, use
+#   demo-assets/blog-hf-ready.md (already prepped with frontmatter + image embeds pointing
+#   at the Space's /resolve URLs) and paste it into https://huggingface.co/new-blog.
+# - Tunnel mirror: https://f1.chinnaboina.com/blog (same content, served from local uvicorn).

@@ -1,0 +1,37 @@
+{
+  "trained": {
+    "virtual_safety_car_window": {
+      "mean": 0.4708,
+      "std": 0.1092,
+      "scores": [
+        0.3371,
+        0.56,
+        0.56,
+        0.56,
+        0.3371
+      ]
+    },
+    "championship_decider": {
+      "mean": 0.555,
+      "std": 0.0245,
+      "scores": [
+        0.585,
+        0.535,
+        0.535,
+        0.535,
+        0.585
+      ]
+    },
+    "tyre_cliff_management": {
+      "mean": 0.5516,
+      "std": 0.0192,
+      "scores": [
+        0.5149,
+        0.557,
+        0.572,
+        0.557,
+        0.557
+      ]
+    }
+  }
+}

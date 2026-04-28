@@ -1,0 +1,107 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtualenvs
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Training artefacts (regeneratable)
+sft_dataset_*.jsonl
+sft_checkpoints_*/
+grpo_*/
+training_log.txt
+training_*.log
+training_smoke.log
+checkpoints/
+runs/
+wandb/
+.cache/
+
+# Unsloth runtime build cache (regenerated on each training run)
+unsloth_compiled_cache/
+
+# Eval artefacts (KEEP results/, just exclude the giant raw artefacts)
+results/raw_rollouts/
+results/*.npy
+
+# Captures (visualizer outputs are committed selectively to demo-assets/)
+captures/*.gif
+captures/*.mp4
+captures/*.jsonl
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# Allowlist exception: the canonical training notebook IS in git
+!notebooks/f1_strategist_training_colab.ipynb
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# External research notes (private — never commit)
+[External]*.md
+!README.md
+
+# Docker volumes / data caches that shouldn't be in git
+data/*.cache
+data/raw/
+
+# IDE/VCS leftovers
+.mypy_cache/
+.ruff_cache/
+
+racetrack-database-master/
+archive/
+
+# local env / generated cache
+.venv/
+__pycache__/
+*.pyc
+unsloth_compiled_cache/
+
+# temporary train.py backups
+train.py.bak*
+train.py.before_*
+train.py.broken_*
+
+# Model checkpoints — published on HF Hub, never in git
+# (grpo_*/ already ignored above; explicit exclusions below for clarity)
+grpo_main_hf/
+sft_checkpoints_v1/
+sft_checkpoints_v4/
+
+# Local RFT artifacts (datasets + checkpoints)
+rft_dataset*.jsonl
+rft_checkpoints*/

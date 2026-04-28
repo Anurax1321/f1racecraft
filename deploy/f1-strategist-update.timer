@@ -1,0 +1,11 @@
+[Unit]
+Description=Poll git remote and restart f1-strategist on new commits
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+AccuracySec=15s
+Unit=f1-strategist-update.service
+
+[Install]
+WantedBy=timers.target

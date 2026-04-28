@@ -1,0 +1,73 @@
+# Keep the HF Space image lean. The container only needs to serve the OpenEnv API.
+
+# Heavy training/eval artefacts (regenerated on the GPU server)
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+sft_dataset_*.jsonl
+sft_checkpoints_*/
+grpo_smoke/
+grpo_v2/
+grpo_colab/
+training_*.log
+training_log.txt
+checkpoints/
+runs/
+wandb/
+.cache/
+
+# Notebooks (not needed at runtime)
+notebooks/
+
+# Tests (not needed at runtime)
+tests/
+
+# Scripts (not needed at runtime — these run on the GPU server, not in the Space)
+scripts/
+
+# Docs (not needed at runtime)
+docs/
+
+# Demo assets (referenced by README but not needed inside the container)
+demo-assets/
+
+# Captures
+captures/
+
+# Results (not needed at runtime, READMEs reference paths only)
+results/
+
+# Git
+.git/
+.gitignore
+.github/
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Markdown except the top-level README (HF Spaces parses README frontmatter)
+*.md
+!README.md
+
+# Environment files
+.env
+.env.local
+.env.example
+
+# Top-level Python that runs OUTSIDE the container (training/eval only)
+# inference.py IS needed — server/app.py imports from it for the /simulate endpoint
+train.py
+evaluate.py
+rollout.py
+capture_everything.py
