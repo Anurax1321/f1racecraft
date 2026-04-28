@@ -1,6 +1,6 @@
 # Teaching an LLM to be an F1 Race Engineer with GRPO
 
-**Authors:** Shashwat Rajan, Tanish Shitanshu
+**Authors:** Anurag Chinnaboina, Shashwat Rajan
 **Hackathon:** Meta PyTorch OpenEnv Grand Finale — Bangalore, April 25–26, 2026
 **Themes:** #2 Super Long-Horizon Planning · #3.1 Professional Tasks
 **Space:** [Deltasthic/f1-strategist](https://huggingface.co/spaces/Deltasthic/f1-strategist)

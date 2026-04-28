@@ -3,8 +3,8 @@ name = "f1-strategist"
 version = "1.0.0"
 description = "LLM race-strategy OpenEnv environment for the Meta PyTorch Hackathon Grand Finale 2026"
 authors = [
+    { name = "Anurag Chinnaboina" },
     { name = "Shashwat Rajan" },
-    { name = "Tanish Shitanshu" },
 ]
 readme = "README.md"
 license = { text = "MIT" }
@@ -59,9 +59,9 @@ dev = [
 server = "server.app:main"
 
 [project.urls]
-Homepage = "https://github.com/Deltasthicc/f1-strategist"
-Space = "https://huggingface.co/spaces/Deltasthic/f1-strategist"
-Repository = "https://github.com/Deltasthicc/f1-strategist"
+Homepage = "https://github.com/Anurax1321/f1racecraft"
+Repository = "https://github.com/Anurax1321/f1racecraft"
+Preview = "https://f1.chinnaboina.com/f1_LLM_racing"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]

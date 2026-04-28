@@ -1,5 +1,5 @@
 [Unit]
-Description=F1 Strategist OpenEnv server (uvicorn)
+Description=F1Racecraft OpenEnv server (uvicorn)
 After=network-online.target
 Wants=network-online.target
 

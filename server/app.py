@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI
-from fastapi.responses import FileResponse, RedirectResponse, Response
+from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from openenv.core.env_server import create_app
 from pydantic import BaseModel
@@ -63,8 +63,11 @@ def _preload_qwen3() -> None:
         print(f"[startup] Qwen3-0.6B preload failed: {exc}", flush=True)
 
 
-# Start loading immediately when the module is imported (server startup)
-threading.Thread(target=_preload_qwen3, daemon=True).start()
+# Start loading immediately when the module is imported (server startup).
+# Skip the preload in dev mode (F1_DEV_MODE=1) — uvicorn --reload re-imports
+# this module on every file change, and the 30s preload would make dev unbearable.
+if os.environ.get("F1_DEV_MODE") != "1":
+    threading.Thread(target=_preload_qwen3, daemon=True).start()
 
 # ---------------------------------------------------------------------------
 # Shared environment singleton
@@ -109,12 +112,6 @@ if _STATIC_DIR.exists():
         if index.exists():
             return FileResponse(str(index), media_type="text/html")
         return {"status": "ok", "name": "F1 Strategist", "see": "/"}
-
-    # /web is documented in older OpenEnv tooling as the Gradio panel route.
-    # We expose the same data through the richer landing page, so redirect.
-    @app.get("/web", include_in_schema=False)
-    def _web_redirect():
-        return RedirectResponse(url="/", status_code=302)
 
 # ---------------------------------------------------------------------------
 # /simulate endpoint — runs a full episode with heuristic policy, returns
@@ -393,18 +390,6 @@ def get_blog() -> Response:
 </body>
 </html>"""
     return Response(content=html, media_type="text/html")
-
-
-# Optional: also mount our richer custom Gradio demo panel at /demo
-if os.environ.get("ENABLE_WEB_INTERFACE") == "1":
-    try:
-        import gradio as gr
-        from server.visualizer import build_gradio_panel
-
-        _demo_app = build_gradio_panel(_shared_env)
-        app = gr.mount_gradio_app(app, _demo_app, path="/demo")
-    except Exception:
-        pass  # gradio not installed or panel failed — degrade gracefully
 
 
 # ---------------------------------------------------------------------------

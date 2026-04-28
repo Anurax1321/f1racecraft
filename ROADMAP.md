@@ -469,6 +469,12 @@ A race replay with rolling commentary. With TTS: a watchable, listenable race.
 - 9.3 README polish
 - 9.4 Blog v2
 - 9.5 Promote `/f1_LLM_racing` → `/`; tag `v1.0`
+- 9.6 **Decide on HF Space discoverability.** At v1.0, decide whether to
+  publish a personal HF Space at `Anurax1321/f1racecraft` for OpenEnv
+  community discoverability. Tradeoff: the model won't run on free CPU tier
+  by then (14B base), so the Space would be a static landing page only.
+  Likely value: yes — it's a free distribution channel and OpenEnv judges
+  search the Space hub.
 
 ### Milestone
 `v1.0` shipped, public, shareable.

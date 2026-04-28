@@ -10,13 +10,74 @@
 
 ```
 Phase:        0 (Foundation cleanup)
-Sub-step:     0.4 (next — strip 110 MB tokenizer cruft from git)
-Last commit:  38883f4 (submitted) — pre-roadmap baseline
-Next action:  After GitHub repo move (Anurax1321/F1_LLM_Racing), do 0.4
-Blocked on:   user to create empty repo at github.com/Anurax1321/F1_LLM_Racing
+Sub-step:     0.6 (next — re-run Colab notebook on T4)
+Last commit:  da99f3b (Initial commit — F1Racecraft) on origin/main
+Next action:  User commits + pushes the pending changes (see "Pending commit" below).
+              Optional: install systemd unit for auto-restart (see "Server ops" below).
+Blocked on:   nothing
 Last session: 2026-04-28
 Owner:        Anurag (solo personal project, post-hackathon)
 ```
+
+## Server ops — dev reload + production auto-restart
+
+**Dev mode (auto-reload on file change):**
+```bash
+F1_DEV_MODE=1 /home/anurag/.virtualenvs/f1-strategist/bin/python -m uvicorn \
+  server.app:app --host 127.0.0.1 --port 8765 --reload
+```
+`F1_DEV_MODE=1` skips the 30s Qwen3-0.6B preload (each reload would re-trigger it).
+
+**Production (auto-restart if it dies, auto-start on boot):**
+
+A systemd unit lives at `deploy/f1-strategist.service`. Install once:
+```bash
+sudo cp deploy/f1-strategist.service /etc/systemd/system/f1racecraft.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now f1racecraft.service
+sudo systemctl status f1racecraft.service     # check it's running
+journalctl -u f1racecraft.service -f          # follow logs
+```
+
+After install, kill the manually-launched uvicorn so systemd takes over:
+```bash
+pkill -f "uvicorn server.app:app"             # systemd will respawn from its own ExecStart
+```
+
+The unit has `Restart=always` (3-second backoff) and `ExecStartPre=git pull` so
+deploys = `git push` + a systemd restart. To turn that off, edit the unit and
+remove the two `ExecStartPre=...git...` lines.
+
+## Pending commit (Claude has staged changes; user to commit)
+
+Author attribution updated everywhere: **Anurag Chinnaboina, Shashwat Rajan**
+(Tanish removed). README rewritten for readability. `hfspace` remote removed.
+HF Space discoverability decision deferred to Phase 9.6.
+
+Files touched this session (not yet committed):
+- `LICENSE` — copyright line
+- `pyproject.toml` — authors + URLs
+- `README.md` — full rewrite, much shorter
+- `blog.md` — Authors line
+- `openenv.yaml` — author line
+- `CLAUDE.md` — Team line
+- `server/static/index.html` — frontend authors (footer + team section)
+- `ROADMAP.md` — added Phase 6.5 (Continual Learning) + Phase 9.6 (HF Space decision)
+- `STATUS.md` — this file
+- `docs/postmortem-ablation.md` — sub-step 0.3 verdict (new file)
+- `server/preview.py` — preview page module (new file)
+- `server/app.py` — `/f1_LLM_racing` route mounted; dropped `/web` redirect, `/demo` Gradio mount, `ENABLE_WEB_INTERFACE` block; added `F1_DEV_MODE=1` to skip Qwen3 preload during reload-dev mode
+- `deploy/f1-strategist.service` — description rebranded to F1Racecraft
+- `.gitignore` — model checkpoint dirs excluded for clean LFS-free repo
+- `results/ablation_hard_*.json/png` — sub-step 0.3 artifacts
+
+Files **not** touched (frozen historical):
+`STATE.md`, `TODO.md`, `GPU_HANDOFF.md`, `PRE_PUSH_CHECKLIST.md`,
+`demo-assets/*`, `docs/person*-tasks.md`, `docs/build-order.md`, the Colab
+notebook. These document the hackathon-as-it-was; don't rewrite history.
+
+Suggested commit message:
+> `chore: rebrand to F1Racecraft; rewrite README; remove hfspace remote`
 
 ---
 
@@ -46,8 +107,8 @@ For the full plan see [`ROADMAP.md`](ROADMAP.md).
 | 0.1 | Write `ROADMAP.md` and `STATUS.md` | ✅ done |
 | 0.2 | Build `/f1_LLM_racing` preview page | ✅ done (needs server restart to go live) |
 | 0.3 | Postmortem ablation on harder seeds | ✅ done — verdict: keep, +0.019 avg ([docs/postmortem-ablation.md](docs/postmortem-ablation.md)) |
-| 0.4 | Strip 110 MB tokenizer cruft from git | ⬜ |
-| 0.5 | Decide & act on Gradio `/web` | ⬜ |
+| 0.4 | Strip 110 MB tokenizer cruft from git | ✅ skipped — new repo never committed it (Option C migration) |
+| 0.5 | Decide & act on Gradio `/web` | ✅ done — dropped (openenv shim doesn't support it; SSE `/dashboard` planned for Phase 7 instead). Code cleanup applied to `server/app.py`. |
 | 0.6 | Re-run Colab on T4 | ⬜ |
 | 0.7 | Add `scripts/` wrappers | ⬜ |
 | 0.8 | Tag `v0.2-foundation` | ⬜ |
@@ -81,11 +142,19 @@ Full hackathon log lives in `STATE.md` (frozen — do not edit).
 
 | Route | Purpose | Status |
 |---|---|---|
-| `/` | Hackathon submission landing (frozen) | live |
-| `/f1_LLM_racing` | NEW — vision/roadmap/progress preview page | being built (0.2) |
+| `/` | Hackathon submission landing (frozen, attribution updated) | live |
+| `/f1_LLM_racing` | Vision/roadmap/progress preview page | live ✅ |
 | `/blog` | Submission blog | live |
 | `/reset`, `/step`, `/health` | OpenEnv API | live |
 | `/race/live/<id>` | Phase 7 live race viewer | not built |
+
+## Remotes
+
+| Name | URL | Purpose |
+|---|---|---|
+| `origin` | `git@github.com:Anurax1321/f1racecraft.git` | active personal repo |
+| `deltasthicc` | `Deltasthicc/F1_Simulator_OpenENV` | frozen hackathon archive |
+| ~~`hfspace`~~ | ~~`Deltasthic/f1-strategist` HF Space~~ | **removed 2026-04-28** — Space frozen as hackathon artifact, not pushed to from this repo anymore. Revisit at Phase 9.6 (own Space at v1.0). |
 
 When `v1.0` ships, `/f1_LLM_racing` is promoted to `/`. The current `/` becomes
 `/submission` and is preserved for posterity.

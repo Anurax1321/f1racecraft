@@ -8,9 +8,9 @@ LLM race-strategist OpenEnv environment for the **Meta PyTorch OpenEnv Hackathon
 Finale (April 25–26, 2026, Bangalore)**. Domain transplant of `OpsTwin Recovery Arena` —
 keep the architecture, change the nouns. Reference the OpsTwin codebase when porting logic.
 
-**Team:** Shashwat Rajan + Tanish Shitanshu
-**Repo:** `f1-strategist` under HF org `Deltasthic` (rename if you want different)
-**Theme:** #2 (Super) Long-Horizon Planning + secondary #3.1 Professional Tasks
+**Team:** Anurag Chinnaboina (lead, post-hackathon) + Shashwat Rajan
+**Repo:** `Anurax1321/f1racecraft` (personal project; original `Deltasthicc/F1_Simulator_OpenENV` frozen as reference)
+**Origin:** Built for Meta PyTorch OpenEnv Hackathon (Apr 2026); now a personal long-running build. See `ROADMAP.md` for the active plan.
 
 ## The One Thing That Matters Most
 
