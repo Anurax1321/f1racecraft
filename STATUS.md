@@ -9,14 +9,22 @@
 ## Cursor
 
 ```
-Phase:        0 (Foundation cleanup)
-Sub-step:     0.8 (next — tag v0.2-foundation; close out Phase 0)
-Last commit:  a18aa20 (updated and step 0 in progress) on origin/dev
-Next action:  Commit pending changes, then `git tag v0.2-foundation && git push --tags`
-Blocked on:   nothing
+Phase:        1 (Full race length) — ready to start
+Sub-step:     1.1 (parametrize race length in scenarios.py and generator.py)
+Last commit:  174be7c on origin/dev + origin/main
+Local tag:    v0.2-foundation (NOT yet pushed to origin — user action)
+Next action:  user pushes tag, then I start sub-step 1.1
+Blocked on:   user to run `git push origin v0.2-foundation`
 Last session: 2026-04-28
 Owner:        Anurag (solo personal project, post-hackathon)
 ```
+
+## Phase 0 — closed ✅
+
+All sub-steps done. Tag `v0.2-foundation` created on commit `174be7c`. Phase
+deliverables: ROADMAP, STATUS, /f1_LLM_racing preview page, postmortem ablation
+verdict, Gradio /web dropped, scripts/ wrappers, systemd auto-restart, repo
+migrated to Anurax1321/f1racecraft.
 
 ## Server ops — dev reload + production auto-restart
 
@@ -99,18 +107,18 @@ For the full plan see [`ROADMAP.md`](ROADMAP.md).
 
 ---
 
-## Phase 0 sub-step status
+## Phase 0 sub-step status — all done ✅
 
 | # | Sub-step | Status |
 |---|---|---|
-| 0.1 | Write `ROADMAP.md` and `STATUS.md` | ✅ done |
-| 0.2 | Build `/f1_LLM_racing` preview page | ✅ done (needs server restart to go live) |
-| 0.3 | Postmortem ablation on harder seeds | ✅ done — verdict: keep, +0.019 avg ([docs/postmortem-ablation.md](docs/postmortem-ablation.md)) |
-| 0.4 | Strip 110 MB tokenizer cruft from git | ✅ skipped — new repo never committed it (Option C migration) |
-| 0.5 | Decide & act on Gradio `/web` | ✅ done — dropped (openenv shim doesn't support it; SSE `/dashboard` planned for Phase 7 instead). Code cleanup applied to `server/app.py`. |
-| 0.6 | Re-run Colab on T4 | ⏭️ deferred — hackathon artifact, not core to the vision. URLs patched so it's not broken; verification parked in `Deferred / Parking Lot` (ROADMAP.md). |
-| 0.7 | Add `scripts/` wrappers | ✅ done — `serve.sh`, `eval.sh`, `train.sh`, `race.sh`. Idempotent. README updated. |
-| 0.8 | Tag `v0.2-foundation` | ⬜ |
+| 0.1 | Write `ROADMAP.md` and `STATUS.md` | ✅ |
+| 0.2 | Build `/f1_LLM_racing` preview page | ✅ |
+| 0.3 | Postmortem ablation on harder seeds | ✅ verdict: keep, +0.019 avg ([docs/postmortem-ablation.md](docs/postmortem-ablation.md)) |
+| 0.4 | Strip 110 MB tokenizer cruft | ✅ skipped — Option C migration started clean |
+| 0.5 | Decide on Gradio `/web` | ✅ dropped — SSE `/dashboard` planned for Phase 7 |
+| 0.6 | Re-run Colab on T4 | ⏭️ deferred — Parking Lot |
+| 0.7 | `scripts/` wrappers | ✅ `serve / eval / train / race` |
+| 0.8 | Tag `v0.2-foundation` | ✅ created locally; awaiting `git push origin v0.2-foundation` |
 
 ---
 
