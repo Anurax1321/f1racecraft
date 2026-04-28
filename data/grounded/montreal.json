@@ -1,0 +1,48 @@
+{
+ "track": "montreal",
+ "country": "Canada",
+ "event_names": [
+  "Canadian Grand Prix"
+ ],
+ "years_covered": [
+  2024
+ ],
+ "n_races": 1,
+ "tyres": {},
+ "pit": {
+  "n_races_in_corpus": 1,
+  "total_pit_decisions": 42,
+  "avg_pits_per_driver_per_race": 2,
+  "fraction_pits_under_sc_or_vsc": 0.5,
+  "pit_lap_p10": 26,
+  "pit_lap_p25": 26,
+  "pit_lap_p50": 42,
+  "pit_lap_p75": 45,
+  "pit_lap_p90": 48
+ },
+ "sc": {
+  "n_races_in_corpus": 1,
+  "fraction_with_sc": 1.0,
+  "fraction_with_vsc": 0.0,
+  "sc_lap_p25": 27,
+  "sc_lap_p50": 29,
+  "sc_lap_p75": 55
+ },
+ "strategy": {},
+ "weather": {
+  "n_races_in_corpus": 1,
+  "fraction_wet_races": 1.0,
+  "air_temp_c_mean": 17.8,
+  "air_temp_c_min": 17.8,
+  "air_temp_c_max": 17.8,
+  "track_temp_c_mean": 24.6,
+  "track_temp_c_min": 24.6,
+  "track_temp_c_max": 24.6
+ },
+ "dirty_air": {
+  "n_races_in_corpus": 1,
+  "overtakes_per_lap_mean": 2.029,
+  "overtakes_per_lap_min": 2.029,
+  "overtakes_per_lap_max": 2.029
+ }
+}

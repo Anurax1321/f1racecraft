@@ -1,0 +1,268 @@
+{
+ "track": "austin",
+ "country": "United States",
+ "event_names": [
+  "Las Vegas Grand Prix",
+  "Miami Grand Prix",
+  "United States Grand Prix"
+ ],
+ "years_covered": [
+  2023,
+  2024
+ ],
+ "n_races": 6,
+ "tyres": {
+  "hard": {
+   "slope_s_per_lap_raw": 0.0191,
+   "slope_s_per_lap_effective": 0.0191,
+   "intercept_s": -0.307,
+   "n_samples": 3342,
+   "r_squared": 0.066,
+   "max_tyre_life_observed": 54,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.987,
+    0.975,
+    0.962,
+    0.949,
+    0.936,
+    0.924,
+    0.911,
+    0.898,
+    0.885,
+    0.873,
+    0.86,
+    0.847,
+    0.835,
+    0.822,
+    0.809,
+    0.796,
+    0.784,
+    0.771,
+    0.758,
+    0.745,
+    0.733,
+    0.72,
+    0.707,
+    0.694,
+    0.682,
+    0.669,
+    0.656,
+    0.644,
+    0.631,
+    0.618,
+    0.605,
+    0.593,
+    0.58,
+    0.567,
+    0.554,
+    0.542,
+    0.529,
+    0.516,
+    0.504,
+    0.491,
+    0.478,
+    0.465,
+    0.453,
+    0.44,
+    0.427,
+    0.414,
+    0.402,
+    0.389,
+    0.376,
+    0.363,
+    0.351,
+    0.338,
+    0.325,
+    0.313,
+    0.3,
+    0.287,
+    0.274,
+    0.262
+   ]
+  },
+  "medium": {
+   "slope_s_per_lap_raw": 0.0218,
+   "slope_s_per_lap_effective": 0.0218,
+   "intercept_s": -0.263,
+   "n_samples": 2025,
+   "r_squared": 0.058,
+   "max_tyre_life_observed": 36,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.985,
+    0.971,
+    0.956,
+    0.942,
+    0.927,
+    0.913,
+    0.898,
+    0.883,
+    0.869,
+    0.854,
+    0.84,
+    0.825,
+    0.811,
+    0.796,
+    0.782,
+    0.767,
+    0.752,
+    0.738,
+    0.723,
+    0.709,
+    0.694,
+    0.68,
+    0.665,
+    0.65,
+    0.636,
+    0.621,
+    0.607,
+    0.592,
+    0.578,
+    0.563,
+    0.548,
+    0.534,
+    0.519,
+    0.505,
+    0.49,
+    0.476,
+    0.461,
+    0.447,
+    0.432,
+    0.417
+   ]
+  },
+  "soft": {
+   "slope_s_per_lap_raw": 0.0158,
+   "slope_s_per_lap_effective": 0.0158,
+   "intercept_s": -0.199,
+   "n_samples": 41,
+   "r_squared": 0.036,
+   "max_tyre_life_observed": 29,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.989,
+    0.979,
+    0.968,
+    0.958,
+    0.947,
+    0.937,
+    0.926,
+    0.916,
+    0.905,
+    0.894,
+    0.884,
+    0.873,
+    0.863,
+    0.852,
+    0.842,
+    0.831,
+    0.82,
+    0.81,
+    0.799,
+    0.789,
+    0.778,
+    0.768,
+    0.757,
+    0.747,
+    0.736,
+    0.725,
+    0.715,
+    0.704,
+    0.694,
+    0.683,
+    0.673,
+    0.662,
+    0.651
+   ]
+  }
+ },
+ "pit": {
+  "n_races_in_corpus": 6,
+  "total_pit_decisions": 177,
+  "avg_pits_per_driver_per_race": 1,
+  "fraction_pits_under_sc_or_vsc": 0.181,
+  "pit_lap_p10": 11,
+  "pit_lap_p25": 16,
+  "pit_lap_p50": 24,
+  "pit_lap_p75": 31,
+  "pit_lap_p90": 39
+ },
+ "sc": {
+  "n_races_in_corpus": 6,
+  "fraction_with_sc": 0.5,
+  "fraction_with_vsc": 0.333,
+  "sc_lap_p25": 4,
+  "sc_lap_p50": 26,
+  "sc_lap_p75": 29
+ },
+ "strategy": {
+  "n_drivers_in_corpus": 120,
+  "pit_count_distribution": {
+   "1": 59,
+   "2": 53,
+   "0": 4,
+   "3": 4
+  },
+  "median_n_pits": 1,
+  "most_common_compound_sequences": [
+   {
+    "sequence": [
+     "medium",
+     "hard"
+    ],
+    "count": 41
+   },
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "hard"
+    ],
+    "count": 21
+   },
+   {
+    "sequence": [
+     "hard",
+     "medium"
+    ],
+    "count": 15
+   },
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "medium"
+    ],
+    "count": 11
+   },
+   {
+    "sequence": [
+     "medium",
+     "medium",
+     "hard"
+    ],
+    "count": 7
+   }
+  ]
+ },
+ "weather": {
+  "n_races_in_corpus": 6,
+  "fraction_wet_races": 0.0,
+  "air_temp_c_mean": 24.9,
+  "air_temp_c_min": 17.8,
+  "air_temp_c_max": 30.0,
+  "track_temp_c_mean": 34.1,
+  "track_temp_c_min": 17.7,
+  "track_temp_c_max": 46.6
+ },
+ "dirty_air": {
+  "n_races_in_corpus": 6,
+  "overtakes_per_lap_mean": 3.636,
+  "overtakes_per_lap_min": 2.246,
+  "overtakes_per_lap_max": 5.84
+ }
+}

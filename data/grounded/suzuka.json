@@ -1,0 +1,224 @@
+{
+ "track": "suzuka",
+ "country": "Japan",
+ "event_names": [
+  "Japanese Grand Prix"
+ ],
+ "years_covered": [
+  2023,
+  2024
+ ],
+ "n_races": 2,
+ "tyres": {
+  "medium": {
+   "slope_s_per_lap_raw": 0.049,
+   "slope_s_per_lap_effective": 0.049,
+   "intercept_s": -0.483,
+   "n_samples": 457,
+   "r_squared": 0.021,
+   "max_tyre_life_observed": 24,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.967,
+    0.935,
+    0.902,
+    0.869,
+    0.837,
+    0.804,
+    0.772,
+    0.739,
+    0.706,
+    0.674,
+    0.641,
+    0.608,
+    0.576,
+    0.543,
+    0.51,
+    0.478,
+    0.445,
+    0.413,
+    0.38,
+    0.347,
+    0.315,
+    0.282,
+    0.249,
+    0.217,
+    0.184,
+    0.151,
+    0.119,
+    0.086
+   ]
+  },
+  "hard": {
+   "slope_s_per_lap_raw": 0.0573,
+   "slope_s_per_lap_effective": 0.0573,
+   "intercept_s": -0.665,
+   "n_samples": 915,
+   "r_squared": 0.03,
+   "max_tyre_life_observed": 30,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.962,
+    0.924,
+    0.885,
+    0.847,
+    0.809,
+    0.771,
+    0.732,
+    0.694,
+    0.656,
+    0.618,
+    0.58,
+    0.541,
+    0.503,
+    0.465,
+    0.427,
+    0.388,
+    0.35,
+    0.312,
+    0.274,
+    0.236,
+    0.197,
+    0.159,
+    0.121,
+    0.083,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "soft": {
+   "slope_s_per_lap_raw": 0.0774,
+   "slope_s_per_lap_effective": 0.0774,
+   "intercept_s": -0.643,
+   "n_samples": 102,
+   "r_squared": 0.013,
+   "max_tyre_life_observed": 18,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.948,
+    0.897,
+    0.845,
+    0.794,
+    0.742,
+    0.69,
+    0.639,
+    0.587,
+    0.535,
+    0.484,
+    0.432,
+    0.381,
+    0.329,
+    0.277,
+    0.226,
+    0.174,
+    0.122,
+    0.071,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  }
+ },
+ "pit": {
+  "n_races_in_corpus": 2,
+  "total_pit_decisions": 97,
+  "avg_pits_per_driver_per_race": 2,
+  "fraction_pits_under_sc_or_vsc": 0.124,
+  "pit_lap_p10": 2,
+  "pit_lap_p25": 6,
+  "pit_lap_p50": 16,
+  "pit_lap_p75": 29,
+  "pit_lap_p90": 35
+ },
+ "sc": {
+  "n_races_in_corpus": 2,
+  "fraction_with_sc": 0.5,
+  "fraction_with_vsc": 0.5,
+  "sc_lap_p25": 2,
+  "sc_lap_p50": 3,
+  "sc_lap_p75": 4
+ },
+ "strategy": {
+  "n_drivers_in_corpus": 40,
+  "pit_count_distribution": {
+   "2": 16,
+   "3": 17,
+   "4": 3,
+   "1": 2,
+   "0": 2
+  },
+  "median_n_pits": 2,
+  "most_common_compound_sequences": [
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "hard"
+    ],
+    "count": 6
+   },
+   {
+    "sequence": [
+     "medium",
+     "medium",
+     "hard"
+    ],
+    "count": 5
+   },
+   {
+    "sequence": [
+     "medium",
+     "medium",
+     "medium",
+     "hard"
+    ],
+    "count": 4
+   },
+   {
+    "sequence": [
+     "soft",
+     "medium",
+     "hard"
+    ],
+    "count": 2
+   },
+   {
+    "sequence": [
+     "soft",
+     "soft",
+     "hard",
+     "hard"
+    ],
+    "count": 2
+   }
+  ]
+ },
+ "weather": {
+  "n_races_in_corpus": 2,
+  "fraction_wet_races": 0.0,
+  "air_temp_c_mean": 24.5,
+  "air_temp_c_min": 21.7,
+  "air_temp_c_max": 27.3,
+  "track_temp_c_mean": 39.8,
+  "track_temp_c_min": 37.5,
+  "track_temp_c_max": 42.1
+ },
+ "dirty_air": {
+  "n_races_in_corpus": 2,
+  "overtakes_per_lap_mean": 3.264,
+  "overtakes_per_lap_min": 3.113,
+  "overtakes_per_lap_max": 3.415
+ }
+}

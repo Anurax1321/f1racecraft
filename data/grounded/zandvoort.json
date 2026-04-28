@@ -1,0 +1,259 @@
+{
+ "track": "zandvoort",
+ "country": "Netherlands",
+ "event_names": [
+  "Dutch Grand Prix"
+ ],
+ "years_covered": [
+  2023,
+  2024
+ ],
+ "n_races": 2,
+ "tyres": {
+  "medium": {
+   "slope_s_per_lap_raw": 0.0494,
+   "slope_s_per_lap_effective": 0.0494,
+   "intercept_s": -0.696,
+   "n_samples": 470,
+   "r_squared": 0.397,
+   "max_tyre_life_observed": 32,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.967,
+    0.934,
+    0.901,
+    0.868,
+    0.835,
+    0.802,
+    0.769,
+    0.736,
+    0.703,
+    0.67,
+    0.637,
+    0.604,
+    0.572,
+    0.539,
+    0.506,
+    0.473,
+    0.44,
+    0.407,
+    0.374,
+    0.341,
+    0.308,
+    0.275,
+    0.242,
+    0.209,
+    0.176,
+    0.143,
+    0.11,
+    0.077,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "hard": {
+   "slope_s_per_lap_raw": 0.0402,
+   "slope_s_per_lap_effective": 0.0402,
+   "intercept_s": -0.873,
+   "n_samples": 780,
+   "r_squared": 0.365,
+   "max_tyre_life_observed": 57,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.973,
+    0.946,
+    0.92,
+    0.893,
+    0.866,
+    0.839,
+    0.812,
+    0.786,
+    0.759,
+    0.732,
+    0.705,
+    0.678,
+    0.652,
+    0.625,
+    0.598,
+    0.571,
+    0.544,
+    0.518,
+    0.491,
+    0.464,
+    0.437,
+    0.41,
+    0.384,
+    0.357,
+    0.33,
+    0.303,
+    0.276,
+    0.25,
+    0.223,
+    0.196,
+    0.169,
+    0.142,
+    0.115,
+    0.089,
+    0.062,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "soft": {
+   "slope_s_per_lap_raw": 0.0421,
+   "slope_s_per_lap_effective": 0.0421,
+   "intercept_s": -0.467,
+   "n_samples": 104,
+   "r_squared": 0.159,
+   "max_tyre_life_observed": 24,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.972,
+    0.944,
+    0.916,
+    0.888,
+    0.86,
+    0.832,
+    0.804,
+    0.776,
+    0.748,
+    0.719,
+    0.691,
+    0.663,
+    0.635,
+    0.607,
+    0.579,
+    0.551,
+    0.523,
+    0.495,
+    0.467,
+    0.439,
+    0.411,
+    0.383,
+    0.355,
+    0.327,
+    0.299,
+    0.271,
+    0.243,
+    0.215
+   ]
+  }
+ },
+ "pit": {
+  "n_races_in_corpus": 2,
+  "total_pit_decisions": 127,
+  "avg_pits_per_driver_per_race": 3,
+  "fraction_pits_under_sc_or_vsc": 0.283,
+  "pit_lap_p10": 4,
+  "pit_lap_p25": 15,
+  "pit_lap_p50": 44,
+  "pit_lap_p75": 62,
+  "pit_lap_p90": 65
+ },
+ "sc": {
+  "n_races_in_corpus": 2,
+  "fraction_with_sc": 0.5,
+  "fraction_with_vsc": 0.5,
+  "sc_lap_p25": 17,
+  "sc_lap_p50": 20,
+  "sc_lap_p75": 64
+ },
+ "strategy": {
+  "n_drivers_in_corpus": 20,
+  "pit_count_distribution": {
+   "2": 6,
+   "1": 14
+  },
+  "median_n_pits": 1,
+  "most_common_compound_sequences": [
+   {
+    "sequence": [
+     "medium",
+     "hard"
+    ],
+    "count": 13
+   },
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "soft"
+    ],
+    "count": 2
+   },
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "medium"
+    ],
+    "count": 1
+   },
+   {
+    "sequence": [
+     "soft",
+     "hard",
+     "medium"
+    ],
+    "count": 1
+   },
+   {
+    "sequence": [
+     "soft",
+     "hard",
+     "soft"
+    ],
+    "count": 1
+   }
+  ]
+ },
+ "weather": {
+  "n_races_in_corpus": 2,
+  "fraction_wet_races": 0.5,
+  "air_temp_c_mean": 17.9,
+  "air_temp_c_min": 16.8,
+  "air_temp_c_max": 19.0,
+  "track_temp_c_mean": 27.9,
+  "track_temp_c_min": 24.9,
+  "track_temp_c_max": 30.8
+ },
+ "dirty_air": {
+  "n_races_in_corpus": 2,
+  "overtakes_per_lap_mean": 3.34,
+  "overtakes_per_lap_min": 2.097,
+  "overtakes_per_lap_max": 4.583
+ }
+}

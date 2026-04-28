@@ -1,0 +1,256 @@
+{
+ "track": "catalunya",
+ "country": "Spain",
+ "event_names": [
+  "Spanish Grand Prix"
+ ],
+ "years_covered": [
+  2023,
+  2024
+ ],
+ "n_races": 2,
+ "tyres": {
+  "medium": {
+   "slope_s_per_lap_raw": 0.0624,
+   "slope_s_per_lap_effective": 0.0624,
+   "intercept_s": -0.795,
+   "n_samples": 775,
+   "r_squared": 0.413,
+   "max_tyre_life_observed": 32,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.958,
+    0.917,
+    0.875,
+    0.834,
+    0.792,
+    0.751,
+    0.709,
+    0.667,
+    0.626,
+    0.584,
+    0.543,
+    0.501,
+    0.459,
+    0.418,
+    0.376,
+    0.335,
+    0.293,
+    0.252,
+    0.21,
+    0.168,
+    0.127,
+    0.085,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "hard": {
+   "slope_s_per_lap_raw": 0.0457,
+   "slope_s_per_lap_effective": 0.0457,
+   "intercept_s": -0.689,
+   "n_samples": 855,
+   "r_squared": 0.252,
+   "max_tyre_life_observed": 50,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.97,
+    0.939,
+    0.909,
+    0.878,
+    0.848,
+    0.817,
+    0.787,
+    0.756,
+    0.726,
+    0.696,
+    0.665,
+    0.635,
+    0.604,
+    0.574,
+    0.543,
+    0.513,
+    0.483,
+    0.452,
+    0.422,
+    0.391,
+    0.361,
+    0.33,
+    0.3,
+    0.269,
+    0.239,
+    0.209,
+    0.178,
+    0.148,
+    0.117,
+    0.087,
+    0.056,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "soft": {
+   "slope_s_per_lap_raw": 0.0536,
+   "slope_s_per_lap_effective": 0.0536,
+   "intercept_s": -0.613,
+   "n_samples": 780,
+   "r_squared": 0.194,
+   "max_tyre_life_observed": 27,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.964,
+    0.929,
+    0.893,
+    0.857,
+    0.821,
+    0.786,
+    0.75,
+    0.714,
+    0.679,
+    0.643,
+    0.607,
+    0.572,
+    0.536,
+    0.5,
+    0.464,
+    0.429,
+    0.393,
+    0.357,
+    0.322,
+    0.286,
+    0.25,
+    0.215,
+    0.179,
+    0.143,
+    0.107,
+    0.072,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  }
+ },
+ "pit": {
+  "n_races_in_corpus": 2,
+  "total_pit_decisions": 85,
+  "avg_pits_per_driver_per_race": 2,
+  "fraction_pits_under_sc_or_vsc": 0.0,
+  "pit_lap_p10": 11,
+  "pit_lap_p25": 17,
+  "pit_lap_p50": 28,
+  "pit_lap_p75": 40,
+  "pit_lap_p90": 46
+ },
+ "sc": {
+  "n_races_in_corpus": 2,
+  "fraction_with_sc": 0.0,
+  "fraction_with_vsc": 0.0,
+  "sc_lap_p25": 0,
+  "sc_lap_p50": 0,
+  "sc_lap_p75": 0
+ },
+ "strategy": {
+  "n_drivers_in_corpus": 40,
+  "pit_count_distribution": {
+   "2": 35,
+   "3": 5
+  },
+  "median_n_pits": 2,
+  "most_common_compound_sequences": [
+   {
+    "sequence": [
+     "soft",
+     "medium",
+     "hard"
+    ],
+    "count": 14
+   },
+   {
+    "sequence": [
+     "soft",
+     "medium",
+     "soft"
+    ],
+    "count": 7
+   },
+   {
+    "sequence": [
+     "soft",
+     "hard",
+     "medium"
+    ],
+    "count": 4
+   },
+   {
+    "sequence": [
+     "soft",
+     "soft",
+     "hard"
+    ],
+    "count": 3
+   },
+   {
+    "sequence": [
+     "soft",
+     "hard",
+     "hard"
+    ],
+    "count": 2
+   }
+  ]
+ },
+ "weather": {
+  "n_races_in_corpus": 2,
+  "fraction_wet_races": 0.0,
+  "air_temp_c_mean": 23.4,
+  "air_temp_c_min": 22.7,
+  "air_temp_c_max": 24.1,
+  "track_temp_c_mean": 37.5,
+  "track_temp_c_min": 33.8,
+  "track_temp_c_max": 41.1
+ },
+ "dirty_air": {
+  "n_races_in_corpus": 2,
+  "overtakes_per_lap_mean": 3.871,
+  "overtakes_per_lap_min": 3.576,
+  "overtakes_per_lap_max": 4.167
+ }
+}

@@ -1,0 +1,223 @@
+{
+ "track": "mexico_city",
+ "country": "Mexico",
+ "event_names": [
+  "Mexico City Grand Prix"
+ ],
+ "years_covered": [
+  2023,
+  2024
+ ],
+ "n_races": 2,
+ "tyres": {
+  "medium": {
+   "slope_s_per_lap_raw": -0.0296,
+   "slope_s_per_lap_effective": 0.005,
+   "intercept_s": 0.503,
+   "n_samples": 1046,
+   "r_squared": 0.004,
+   "max_tyre_life_observed": 42,
+   "track_evolution_dominant": true,
+   "health_curve": [
+    1.0,
+    0.997,
+    0.993,
+    0.99,
+    0.987,
+    0.983,
+    0.98,
+    0.977,
+    0.973,
+    0.97,
+    0.967,
+    0.963,
+    0.96,
+    0.957,
+    0.953,
+    0.95,
+    0.947,
+    0.943,
+    0.94,
+    0.937,
+    0.933,
+    0.93,
+    0.927,
+    0.923,
+    0.92,
+    0.917,
+    0.913,
+    0.91,
+    0.907,
+    0.903,
+    0.9,
+    0.897,
+    0.893,
+    0.89,
+    0.887,
+    0.883,
+    0.88,
+    0.877,
+    0.873,
+    0.87,
+    0.867,
+    0.863,
+    0.86,
+    0.857,
+    0.853,
+    0.85,
+    0.847
+   ]
+  },
+  "hard": {
+   "slope_s_per_lap_raw": 0.0042,
+   "slope_s_per_lap_effective": 0.005,
+   "intercept_s": -0.09,
+   "n_samples": 1128,
+   "r_squared": 0.0,
+   "max_tyre_life_observed": 50,
+   "track_evolution_dominant": true,
+   "health_curve": [
+    1.0,
+    0.997,
+    0.993,
+    0.99,
+    0.987,
+    0.983,
+    0.98,
+    0.977,
+    0.973,
+    0.97,
+    0.967,
+    0.963,
+    0.96,
+    0.957,
+    0.953,
+    0.95,
+    0.947,
+    0.943,
+    0.94,
+    0.937,
+    0.933,
+    0.93,
+    0.927,
+    0.923,
+    0.92,
+    0.917,
+    0.913,
+    0.91,
+    0.907,
+    0.903,
+    0.9,
+    0.897,
+    0.893,
+    0.89,
+    0.887,
+    0.883,
+    0.88,
+    0.877,
+    0.873,
+    0.87,
+    0.867,
+    0.863,
+    0.86,
+    0.857,
+    0.853,
+    0.85,
+    0.847,
+    0.843,
+    0.84,
+    0.837,
+    0.833,
+    0.83,
+    0.827,
+    0.823,
+    0.82
+   ]
+  }
+ },
+ "pit": {
+  "n_races_in_corpus": 2,
+  "total_pit_decisions": 59,
+  "avg_pits_per_driver_per_race": 1,
+  "fraction_pits_under_sc_or_vsc": 0.373,
+  "pit_lap_p10": 23,
+  "pit_lap_p25": 29,
+  "pit_lap_p50": 34,
+  "pit_lap_p75": 35,
+  "pit_lap_p90": 48
+ },
+ "sc": {
+  "n_races_in_corpus": 2,
+  "fraction_with_sc": 1.0,
+  "fraction_with_vsc": 0.5,
+  "sc_lap_p25": 3,
+  "sc_lap_p50": 5,
+  "sc_lap_p75": 33
+ },
+ "strategy": {
+  "n_drivers_in_corpus": 40,
+  "pit_count_distribution": {
+   "2": 17,
+   "1": 16,
+   "3": 3,
+   "0": 4
+  },
+  "median_n_pits": 1,
+  "most_common_compound_sequences": [
+   {
+    "sequence": [
+     "medium",
+     "hard"
+    ],
+    "count": 11
+   },
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "hard"
+    ],
+    "count": 9
+   },
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "medium"
+    ],
+    "count": 5
+   },
+   {
+    "sequence": [
+     "hard",
+     "medium"
+    ],
+    "count": 5
+   },
+   {
+    "sequence": [
+     "hard",
+     "medium",
+     "medium"
+    ],
+    "count": 1
+   }
+  ]
+ },
+ "weather": {
+  "n_races_in_corpus": 2,
+  "fraction_wet_races": 0.0,
+  "air_temp_c_mean": 22.7,
+  "air_temp_c_min": 19.9,
+  "air_temp_c_max": 25.5,
+  "track_temp_c_mean": 40.6,
+  "track_temp_c_min": 35.6,
+  "track_temp_c_max": 45.6
+ },
+ "dirty_air": {
+  "n_races_in_corpus": 2,
+  "overtakes_per_lap_mean": 2.0,
+  "overtakes_per_lap_min": 1.845,
+  "overtakes_per_lap_max": 2.155
+ }
+}

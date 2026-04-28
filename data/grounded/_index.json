@@ -1,0 +1,222 @@
+[
+ {
+  "track": "abu_dhabi",
+  "country": "Abu Dhabi",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard",
+   "soft"
+  ],
+  "file": "abu_dhabi.json"
+ },
+ {
+  "track": "austin",
+  "country": "United States",
+  "n_races": 6,
+  "compounds": [
+   "hard",
+   "medium",
+   "soft"
+  ],
+  "file": "austin.json"
+ },
+ {
+  "track": "bahrain",
+  "country": "Bahrain",
+  "n_races": 2,
+  "compounds": [
+   "soft",
+   "hard"
+  ],
+  "file": "bahrain.json"
+ },
+ {
+  "track": "baku",
+  "country": "Azerbaijan",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard"
+  ],
+  "file": "baku.json"
+ },
+ {
+  "track": "catalunya",
+  "country": "Spain",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard",
+   "soft"
+  ],
+  "file": "catalunya.json"
+ },
+ {
+  "track": "hungaroring",
+  "country": "Hungary",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard",
+   "soft"
+  ],
+  "file": "hungaroring.json"
+ },
+ {
+  "track": "interlagos",
+  "country": "Brazil",
+  "n_races": 2,
+  "compounds": [
+   "soft",
+   "medium"
+  ],
+  "file": "interlagos.json"
+ },
+ {
+  "track": "jeddah",
+  "country": "Saudi Arabia",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard",
+   "soft"
+  ],
+  "file": "jeddah.json"
+ },
+ {
+  "track": "lusail",
+  "country": "Qatar",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard",
+   "soft"
+  ],
+  "file": "lusail.json"
+ },
+ {
+  "track": "melbourne",
+  "country": "Australia",
+  "n_races": 2,
+  "compounds": [
+   "hard",
+   "medium"
+  ],
+  "file": "melbourne.json"
+ },
+ {
+  "track": "mexico_city",
+  "country": "Mexico",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard"
+  ],
+  "file": "mexico_city.json"
+ },
+ {
+  "track": "monaco",
+  "country": "Monaco",
+  "n_races": 2,
+  "compounds": [
+   "hard",
+   "medium",
+   "soft"
+  ],
+  "file": "monaco.json"
+ },
+ {
+  "track": "montreal",
+  "country": "Canada",
+  "n_races": 1,
+  "compounds": [],
+  "file": "montreal.json"
+ },
+ {
+  "track": "monza",
+  "country": "Italy",
+  "n_races": 3,
+  "compounds": [
+   "medium",
+   "hard"
+  ],
+  "file": "monza.json"
+ },
+ {
+  "track": "shanghai",
+  "country": "China",
+  "n_races": 1,
+  "compounds": [
+   "medium",
+   "hard",
+   "soft"
+  ],
+  "file": "shanghai.json"
+ },
+ {
+  "track": "silverstone",
+  "country": "Great Britain",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "soft",
+   "hard"
+  ],
+  "file": "silverstone.json"
+ },
+ {
+  "track": "singapore",
+  "country": "Singapore",
+  "n_races": 2,
+  "compounds": [
+   "hard",
+   "medium",
+   "soft"
+  ],
+  "file": "singapore.json"
+ },
+ {
+  "track": "spa",
+  "country": "Belgium",
+  "n_races": 2,
+  "compounds": [
+   "soft",
+   "medium",
+   "hard"
+  ],
+  "file": "spa.json"
+ },
+ {
+  "track": "spielberg",
+  "country": "Austria",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard"
+  ],
+  "file": "spielberg.json"
+ },
+ {
+  "track": "suzuka",
+  "country": "Japan",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard",
+   "soft"
+  ],
+  "file": "suzuka.json"
+ },
+ {
+  "track": "zandvoort",
+  "country": "Netherlands",
+  "n_races": 2,
+  "compounds": [
+   "medium",
+   "hard",
+   "soft"
+  ],
+  "file": "zandvoort.json"
+ }
+]

@@ -1,0 +1,204 @@
+{
+ "track": "spielberg",
+ "country": "Austria",
+ "event_names": [
+  "Austrian Grand Prix"
+ ],
+ "years_covered": [
+  2023,
+  2024
+ ],
+ "n_races": 2,
+ "tyres": {
+  "medium": {
+   "slope_s_per_lap_raw": 0.0659,
+   "slope_s_per_lap_effective": 0.0659,
+   "intercept_s": -0.81,
+   "n_samples": 1110,
+   "r_squared": 0.442,
+   "max_tyre_life_observed": 33,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.956,
+    0.912,
+    0.868,
+    0.824,
+    0.78,
+    0.737,
+    0.693,
+    0.649,
+    0.605,
+    0.561,
+    0.517,
+    0.473,
+    0.429,
+    0.385,
+    0.341,
+    0.298,
+    0.254,
+    0.21,
+    0.166,
+    0.122,
+    0.078,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "hard": {
+   "slope_s_per_lap_raw": 0.0676,
+   "slope_s_per_lap_effective": 0.0676,
+   "intercept_s": -0.974,
+   "n_samples": 1338,
+   "r_squared": 0.515,
+   "max_tyre_life_observed": 37,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.955,
+    0.91,
+    0.865,
+    0.82,
+    0.775,
+    0.73,
+    0.685,
+    0.639,
+    0.594,
+    0.549,
+    0.504,
+    0.459,
+    0.414,
+    0.369,
+    0.324,
+    0.279,
+    0.234,
+    0.189,
+    0.144,
+    0.099,
+    0.054,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  }
+ },
+ "pit": {
+  "n_races_in_corpus": 2,
+  "total_pit_decisions": 108,
+  "avg_pits_per_driver_per_race": 2.5,
+  "fraction_pits_under_sc_or_vsc": 0.324,
+  "pit_lap_p10": 3,
+  "pit_lap_p25": 12,
+  "pit_lap_p50": 23,
+  "pit_lap_p75": 43,
+  "pit_lap_p90": 52
+ },
+ "sc": {
+  "n_races_in_corpus": 2,
+  "fraction_with_sc": 0.5,
+  "fraction_with_vsc": 1.0,
+  "sc_lap_p25": 1,
+  "sc_lap_p50": 2,
+  "sc_lap_p75": 3
+ },
+ "strategy": {
+  "n_drivers_in_corpus": 40,
+  "pit_count_distribution": {
+   "3": 18,
+   "2": 17,
+   "4": 5
+  },
+  "median_n_pits": 3,
+  "most_common_compound_sequences": [
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "medium"
+    ],
+    "count": 7
+   },
+   {
+    "sequence": [
+     "medium",
+     "hard",
+     "hard"
+    ],
+    "count": 6
+   },
+   {
+    "sequence": [
+     "medium",
+     "medium",
+     "hard",
+     "hard"
+    ],
+    "count": 5
+   },
+   {
+    "sequence": [
+     "medium",
+     "medium",
+     "hard",
+     "medium"
+    ],
+    "count": 5
+   },
+   {
+    "sequence": [
+     "medium",
+     "medium",
+     "hard"
+    ],
+    "count": 3
+   }
+  ]
+ },
+ "weather": {
+  "n_races_in_corpus": 2,
+  "fraction_wet_races": 0.0,
+  "air_temp_c_mean": 25.9,
+  "air_temp_c_min": 22.4,
+  "air_temp_c_max": 29.4,
+  "track_temp_c_mean": 39.2,
+  "track_temp_c_min": 32.1,
+  "track_temp_c_max": 46.4
+ },
+ "dirty_air": {
+  "n_races_in_corpus": 2,
+  "overtakes_per_lap_mean": 2.775,
+  "overtakes_per_lap_min": 2.577,
+  "overtakes_per_lap_max": 2.972
+ }
+}

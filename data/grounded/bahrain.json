@@ -1,0 +1,189 @@
+{
+ "track": "bahrain",
+ "country": "Bahrain",
+ "event_names": [
+  "Bahrain Grand Prix"
+ ],
+ "years_covered": [
+  2023,
+  2024
+ ],
+ "n_races": 2,
+ "tyres": {
+  "soft": {
+   "slope_s_per_lap_raw": 0.1012,
+   "slope_s_per_lap_effective": 0.1012,
+   "intercept_s": -0.935,
+   "n_samples": 685,
+   "r_squared": 0.45,
+   "max_tyre_life_observed": 24,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.933,
+    0.865,
+    0.798,
+    0.73,
+    0.663,
+    0.595,
+    0.528,
+    0.46,
+    0.393,
+    0.326,
+    0.258,
+    0.191,
+    0.123,
+    0.056,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "hard": {
+   "slope_s_per_lap_raw": 0.0806,
+   "slope_s_per_lap_effective": 0.0806,
+   "intercept_s": -0.92,
+   "n_samples": 1243,
+   "r_squared": 0.564,
+   "max_tyre_life_observed": 30,
+   "track_evolution_dominant": false,
+   "health_curve": [
+    1.0,
+    0.946,
+    0.893,
+    0.839,
+    0.785,
+    0.731,
+    0.678,
+    0.624,
+    0.57,
+    0.516,
+    0.463,
+    0.409,
+    0.355,
+    0.301,
+    0.248,
+    0.194,
+    0.14,
+    0.086,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  }
+ },
+ "pit": {
+  "n_races_in_corpus": 2,
+  "total_pit_decisions": 93,
+  "avg_pits_per_driver_per_race": 2,
+  "fraction_pits_under_sc_or_vsc": 0.065,
+  "pit_lap_p10": 12,
+  "pit_lap_p25": 13,
+  "pit_lap_p50": 28,
+  "pit_lap_p75": 35,
+  "pit_lap_p90": 41
+ },
+ "sc": {
+  "n_races_in_corpus": 2,
+  "fraction_with_sc": 0.0,
+  "fraction_with_vsc": 0.5,
+  "sc_lap_p25": 0,
+  "sc_lap_p50": 0,
+  "sc_lap_p75": 0
+ },
+ "strategy": {
+  "n_drivers_in_corpus": 40,
+  "pit_count_distribution": {
+   "3": 11,
+   "2": 27,
+   "6": 1,
+   "0": 1
+  },
+  "median_n_pits": 2,
+  "most_common_compound_sequences": [
+   {
+    "sequence": [
+     "soft",
+     "hard",
+     "hard"
+    ],
+    "count": 22
+   },
+   {
+    "sequence": [
+     "soft",
+     "hard",
+     "hard",
+     "soft"
+    ],
+    "count": 6
+   },
+   {
+    "sequence": [
+     "soft",
+     "hard",
+     "soft"
+    ],
+    "count": 3
+   },
+   {
+    "sequence": [
+     "soft",
+     "soft",
+     "hard",
+     "soft"
+    ],
+    "count": 2
+   },
+   {
+    "sequence": [
+     "soft",
+     "soft",
+     "hard"
+    ],
+    "count": 2
+   }
+  ]
+ },
+ "weather": {
+  "n_races_in_corpus": 2,
+  "fraction_wet_races": 0.0,
+  "air_temp_c_mean": 22.8,
+  "air_temp_c_min": 18.2,
+  "air_temp_c_max": 27.4,
+  "track_temp_c_mean": 27.3,
+  "track_temp_c_min": 23.7,
+  "track_temp_c_max": 31.0
+ },
+ "dirty_air": {
+  "n_races_in_corpus": 2,
+  "overtakes_per_lap_mean": 3.456,
+  "overtakes_per_lap_min": 3.316,
+  "overtakes_per_lap_max": 3.596
+ }
+}
