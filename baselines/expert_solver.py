@@ -114,6 +114,103 @@ EXPERT_SEQUENCES = {
         "INSPECT_FUEL_MARGIN",
         "DONE",
     ],
+    # ── Long-race expert sequences (sub-step 1.4) ─────────────────────
+    # 55-lap full GP, 2-stop optimal. Hit both pit windows; manage stints.
+    "monaco_full_gp": (
+        [
+            # Investigation phase — laps 1-6
+            "REQUEST_FORECAST",
+            "ASSESS_UNDERCUT_WINDOW",
+            "INSPECT_TYRE_DEGRADATION",
+            "CHECK_OPPONENT_STRATEGY 1",
+            "CHECK_OPPONENT_STRATEGY 16",
+            "CHECK_OPPONENT_STRATEGY 44",
+            # Stint 1 on mediums — conserve hard
+            "SET_MODE conserve",
+            "MANAGE_TYRE_TEMP cool",
+        ]
+        + ["STAY_OUT"] * 12
+        + [
+            # Pit 1 in window [18,24]; "pit" must appear in radio for comms credit
+            "RADIO_DRIVER Pit this lap for hards.",
+            "PIT_NOW hard",
+            "SET_MODE conserve",
+        ]
+        + ["STAY_OUT"] * 15
+        + [
+            # Pit 2 in window [38,44]
+            "RADIO_DRIVER Pit now for softs.",
+            "PIT_NOW soft",
+            "SET_MODE conserve",  # finish on conserve to keep tyres alive
+        ]
+        + ["STAY_OUT"] * 11
+        + [
+            "INSPECT_FUEL_MARGIN",
+            "DONE",
+        ]
+    ),
+    "silverstone_full_gp": (
+        [
+            # Investigation — Silverstone is heavy on mediums
+            "INSPECT_TYRE_DEGRADATION",
+            "CHECK_OPPONENT_STRATEGY 4",
+            "CHECK_OPPONENT_STRATEGY 1",
+            "ASSESS_UNDERCUT_WINDOW",
+            "SET_MODE conserve",
+            "MANAGE_TYRE_TEMP cool",
+        ]
+        + ["STAY_OUT"] * 13
+        + [
+            # Pit 1 in window [18,24]; mention "pit" for comms
+            "RADIO_DRIVER Pit this lap for medium. Two-stop call.",
+            "PIT_NOW medium",
+            "SET_MODE conserve",
+        ]
+        + ["STAY_OUT"] * 16
+        + [
+            # Pit 2 in window [38,44]
+            "RADIO_DRIVER Pit now for softs. Final stint.",
+            "PIT_NOW soft",
+            "SET_MODE conserve",
+        ]
+        + ["STAY_OUT"] * 11
+        + [
+            "INSPECT_FUEL_MARGIN",
+            "DONE",
+        ]
+    ),
+    "spa_full_wet": (
+        [
+            # Investigation — forecast critical
+            "REQUEST_FORECAST",
+            "INSPECT_TYRE_DEGRADATION",
+            "CHECK_OPPONENT_STRATEGY 1",
+            "CHECK_OPPONENT_STRATEGY 63",
+            "ASSESS_UNDERCUT_WINDOW",
+            "SET_MODE conserve",
+            "MANAGE_TYRE_TEMP cool",
+        ]
+        + ["STAY_OUT"] * 12
+        + [
+            # Pit 1 for inters in window [19,23]
+            "REQUEST_FORECAST",
+            "RADIO_DRIVER Pit this lap for inters. Rain arriving.",
+            "PIT_NOW inter",
+            "SET_MODE conserve",
+        ]
+        + ["STAY_OUT"] * 14
+        + [
+            # Pit 2 back to slicks in window [36,40]
+            "RADIO_DRIVER Pit now for slicks. Dry phase.",
+            "PIT_NOW medium",
+            "SET_MODE conserve",
+        ]
+        + ["STAY_OUT"] * 11
+        + [
+            "INSPECT_FUEL_MARGIN",
+            "DONE",
+        ]
+    ),
 }
 
 
@@ -133,6 +230,16 @@ PANIC_SEQUENCES = {
         "STAY_OUT", "STAY_OUT", "STAY_OUT", "STAY_OUT",
         "PIT_NOW hard", "STAY_OUT", "DONE",
     ],
+    # Long-race panic sequences — same shape, deliberately bad strategy
+    "monaco_full_gp": (
+        ["PIT_NOW soft"] + ["STAY_OUT"] * 50 + ["DONE"]  # pit lap 1, never again
+    ),
+    "silverstone_full_gp": (
+        ["STAY_OUT"] * 50 + ["PIT_NOW hard", "STAY_OUT", "STAY_OUT", "DONE"]  # 1-stop, way too late
+    ),
+    "spa_full_wet": (
+        ["STAY_OUT"] * 50 + ["DONE"]  # never pit, ignore the rain
+    ),
 }
 
 

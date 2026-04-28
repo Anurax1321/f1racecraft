@@ -118,3 +118,31 @@ def test_monaco_has_sc_archetype():
 
 def test_silverstone_has_vsc_archetype():
     assert SCENARIOS["silverstone_full_gp"]["sc_archetype"] in ("vsc_likely", "midrace_likely")
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Sub-step 1.4 gates: expert sequences score ≥0.85 on every long family
+# ─────────────────────────────────────────────────────────────────────────
+
+@pytest.mark.parametrize("family", LONG_FAMILIES)
+def test_expert_sequence_scores_above_floor(family):
+    from baselines.expert_solver import EXPERT_SEQUENCES, run_sequence
+    assert family in EXPERT_SEQUENCES, f"{family}: no expert sequence registered"
+    scores = []
+    for seed in [7, 11, 42]:
+        score, _ = run_sequence(SCENARIOS[family], EXPERT_SEQUENCES[family], seed=seed)
+        scores.append(score)
+    avg = sum(scores) / len(scores)
+    assert avg >= 0.85, \
+        f"{family}: expert avg score {avg:.3f} below 0.85 floor (seeds 7/11/42: {scores})"
+
+
+@pytest.mark.parametrize("family", LONG_FAMILIES)
+def test_expert_beats_panic(family):
+    """Expert sequence must beat panic by >=0.20 — confirms the scorer
+    discriminates good play from bad on long-race families."""
+    from baselines.expert_solver import EXPERT_SEQUENCES, PANIC_SEQUENCES, run_sequence
+    e_score, _ = run_sequence(SCENARIOS[family], EXPERT_SEQUENCES[family], seed=7)
+    p_score, _ = run_sequence(SCENARIOS[family], PANIC_SEQUENCES[family], seed=7)
+    assert e_score - p_score >= 0.20, \
+        f"{family}: expert {e_score:.3f} - panic {p_score:.3f} = {e_score-p_score:+.3f} (need >=0.20)"

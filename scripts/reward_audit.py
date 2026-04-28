@@ -34,31 +34,45 @@ LONG_FAMILIES = ["monaco_full_gp", "silverstone_full_gp", "spa_full_wet"]
 
 
 def _heuristic_policy(obs, history):
-    """A reasonable scripted policy — investigate, then pit, then race."""
+    """A reasonable scripted policy — investigate, conserve, then pit, then race.
+
+    Uses SET_MODE conserve early because the env's tyre physics burns
+    mediums fast on high-deg tracks (5%+ per lap). Without conserve mode,
+    tyres die before the optimal pit window. This mirrors the long-race
+    expert sequences in baselines/expert_solver.py.
+    """
     lap = int(obs.current_lap)
     total = int(obs.total_laps)
     seen = {h.get("action", "").split()[0] for h in history if h.get("action")}
-    # Investigate early
-    if lap <= 2 and "REQUEST_FORECAST" not in seen:
+    pit_count = sum(1 for h in history if h.get("action", "").startswith("PIT_NOW"))
+
+    # Investigation phase (laps 1-4)
+    if lap <= 1 and "REQUEST_FORECAST" not in seen:
         return "REQUEST_FORECAST"
-    if lap <= 3 and "ASSESS_UNDERCUT_WINDOW" not in seen:
+    if lap <= 2 and "ASSESS_UNDERCUT_WINDOW" not in seen:
         return "ASSESS_UNDERCUT_WINDOW"
-    if lap <= 4 and "INSPECT_TYRE_DEGRADATION" not in seen:
+    if lap <= 3 and "INSPECT_TYRE_DEGRADATION" not in seen:
         return "INSPECT_TYRE_DEGRADATION"
-    # Pit windows
+    if lap <= 4 and "SET_MODE" not in seen:
+        return "SET_MODE conserve"
+
+    # Pit timing
     if total <= 15:
-        if 4 <= lap <= 6 and "PIT_NOW" not in seen:
+        if 4 <= lap <= 6 and pit_count == 0:
+            return "RADIO_DRIVER Pit this lap for softs."
+        if pit_count == 0 and lap == 6:
             return "PIT_NOW soft"
     else:
-        # Long race: 2-stop near 1/3 and 2/3 of the way
-        if abs(lap - total * 0.35) <= 1 and "PIT_NOW" not in seen:
+        # Long race: 2-stop at ~lap 21 and ~lap 41
+        if pit_count == 0 and lap == 20:
+            return "RADIO_DRIVER Pit this lap for medium."
+        if pit_count == 0 and lap == 21:
             return "PIT_NOW medium"
-        if abs(lap - total * 0.70) <= 1 and (history and history[-1].get("action", "").startswith("PIT_NOW")):
-            pass  # avoid double pit on consecutive steps
-        if total - lap == int(total * 0.30) and "PIT_NOW soft" not in [h.get("action") for h in history]:
+        if pit_count == 1 and lap == 40:
+            return "RADIO_DRIVER Pit now for softs."
+        if pit_count == 1 and lap == 41:
             return "PIT_NOW soft"
-    if lap == 1:
-        return "RADIO_DRIVER Pit window opens lap 5 — push the gap."
+
     return "STAY_OUT"
 
 
