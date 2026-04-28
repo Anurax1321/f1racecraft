@@ -193,6 +193,33 @@ actual calls, side by side.
 
 ---
 
+## Phase 5+ enhancement — Model chooses starting compound (earmarked)
+
+Right now `starting_compound` is fixed per scenario in
+`server/scenarios_long.py`. Real F1 teams *choose* their starting tyre as part
+of pre-race strategy, and Devin Thomas's F1-RL paper (arXiv:2501.04068)
+matches this — they fix starting compound via the simulator, not the policy.
+
+**The richer move (Phase 5 or 6):** add `SET_STARTING_COMPOUND` as a special
+pre-race action issued at lap 0. The model would observe scenario context
+(track, weather forecast, opponent compounds) before the race begins and pick
+its own opener. This is **multi-agent + pre-race agency** — fits naturally
+with Phase 5 (all 20 cars LLM-driven, each with their own pre-race choice).
+
+Skipped for now because:
+1. It expands the action space and observation surface (architectural change)
+2. The fixed-starting-compound design lets the model learn pure in-race
+   strategy first
+3. Scenario authors can express *forced* starting-compound choices as
+   training signal (e.g., "you start on hard at Silverstone — make it work")
+
+**Insight that surfaced this**: starting on a more durable compound is a
+real strategic lever, distinct from per-stint mode management. Both are
+needed. Documented in expert sequences as the "hard opener + conserve in
+midrace stint" pattern.
+
+---
+
 ## Phase 3 upgrade path — HCAPO (earmarked, not started)
 
 If 14B GRPO plateaus on long-race scenarios with ≤0.05 improvement over 4B,

@@ -57,7 +57,7 @@ MONACO_FULL_GP: dict = {
     "max_score": 1.0,
     "seed": 78,
     "starting_position": 4,
-    "starting_compound": "medium",
+    "starting_compound": "hard",
     "starting_fuel_kg": 110.0,
     "starting_drive_mode": "race",
     "opponents": [
@@ -187,14 +187,14 @@ MONACO_FULL_GP: dict = {
 SILVERSTONE_FULL_GP: dict = {
     "task_name": "silverstone_full_gp",
     "scenario_family": "silverstone_full_gp",
-    "description": "Silverstone GP: high tyre wear, two-stop optimal, VSC may fire.",
+    "description": "Silverstone GP: high tyre wear demands a durable opener.",
     "track_name": "Silverstone",
     "total_laps": 55,
     "max_steps": 59,
     "max_score": 1.0,
     "seed": 70,
     "starting_position": 5,
-    "starting_compound": "medium",
+    "starting_compound": "hard",
     "starting_fuel_kg": 110.0,
     "starting_drive_mode": "race",
     "opponents": [

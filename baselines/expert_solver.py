@@ -117,31 +117,32 @@ EXPERT_SEQUENCES = {
     # ── Long-race expert sequences (sub-step 1.4) ─────────────────────
     # 55-lap full GP, 2-stop optimal. Hit both pit windows; manage stints.
     "monaco_full_gp": (
+        # Real F1 strategy = durable opener + tactical mode management.
+        # Start on HARD (long opening stint), race-pace through it, then
+        # conserve through the medium stint to last 16+ laps, finally push
+        # on the soft for the dash to the flag.
         [
-            # Investigation phase — laps 1-6
             "REQUEST_FORECAST",
             "ASSESS_UNDERCUT_WINDOW",
             "INSPECT_TYRE_DEGRADATION",
             "CHECK_OPPONENT_STRATEGY 1",
             "CHECK_OPPONENT_STRATEGY 16",
             "CHECK_OPPONENT_STRATEGY 44",
-            # Stint 1 on mediums — conserve hard
-            "SET_MODE conserve",
-            "MANAGE_TYRE_TEMP cool",
+            "SET_MODE race",
         ]
-        + ["STAY_OUT"] * 12
+        + ["STAY_OUT"] * 13
         + [
-            # Pit 1 in window [18,24]; "pit" must appear in radio for comms credit
-            "RADIO_DRIVER Pit this lap for hards.",
-            "PIT_NOW hard",
+            # Pit 1 in window [18,24] — hard → medium, conserve through midrace
+            "RADIO_DRIVER Pit this lap for medium.",
+            "PIT_NOW medium",
             "SET_MODE conserve",
         ]
         + ["STAY_OUT"] * 15
         + [
-            # Pit 2 in window [38,44]
+            # Pit 2 in window [38,44] — medium → soft, push to the flag
             "RADIO_DRIVER Pit now for softs.",
             "PIT_NOW soft",
-            "SET_MODE conserve",  # finish on conserve to keep tyres alive
+            "SET_MODE push",
         ]
         + ["STAY_OUT"] * 11
         + [
@@ -150,8 +151,9 @@ EXPERT_SEQUENCES = {
         ]
     ),
     "silverstone_full_gp": (
+        # Hard opener (Silverstone is high-wear). Conserve from the start
+        # because even hard tyres at race pace burn through 20+ laps here.
         [
-            # Investigation — Silverstone is heavy on mediums
             "INSPECT_TYRE_DEGRADATION",
             "CHECK_OPPONENT_STRATEGY 4",
             "CHECK_OPPONENT_STRATEGY 1",
@@ -161,17 +163,17 @@ EXPERT_SEQUENCES = {
         ]
         + ["STAY_OUT"] * 13
         + [
-            # Pit 1 in window [18,24]; mention "pit" for comms
+            # Pit 1 in window [18,24] — hard → medium
             "RADIO_DRIVER Pit this lap for medium. Two-stop call.",
             "PIT_NOW medium",
             "SET_MODE conserve",
         ]
         + ["STAY_OUT"] * 16
         + [
-            # Pit 2 in window [38,44]
+            # Pit 2 in window [38,44] — medium → soft, push to the flag
             "RADIO_DRIVER Pit now for softs. Final stint.",
             "PIT_NOW soft",
-            "SET_MODE conserve",
+            "SET_MODE push",
         ]
         + ["STAY_OUT"] * 11
         + [
