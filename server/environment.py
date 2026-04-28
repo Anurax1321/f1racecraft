@@ -182,6 +182,8 @@ class F1StrategistEnvironment(Environment[F1Action, F1Observation, F1State]):
         self._last_revelations = []
         self._final_scores = {}
         self._postmortem_recorded = False
+        # Sub-step 2.4: per-compound grounded wear factors (None = synthetic)
+        self._grounded_factors: dict[str, float] | None = None
 
     def _load(self, scenario_dict: dict) -> None:
         self._scenario = copy.deepcopy(scenario_dict)
@@ -224,6 +226,28 @@ class F1StrategistEnvironment(Environment[F1Action, F1Observation, F1State]):
         ]
         self._dynamic_events = list(self._scenario.get("dynamic_events", []))
         self._last_message = self._scenario.get("description", "")
+
+        # Sub-step 2.4 — opt-in grounded calibration. When the scenario sets
+        # ``use_grounded_calibration: True``, look up per-compound wear
+        # factors from FastF1 data via server/grounded.py and overwrite
+        # hidden_state.true_tyre_curve with the grounded health curves so
+        # physics + INSPECT reveal stay consistent (the model trains on
+        # aligned signal). Default behaviour (flag absent / False) is
+        # unchanged → existing scenarios behave identically.
+        if self._scenario.get("use_grounded_calibration"):
+            from server.grounded import get_health_curve, get_wear_factor
+
+            track_key = str(self._scenario.get("grounded_track_key")
+                            or self._scenario.get("track_name", "")).lower()
+            self._grounded_factors = {
+                c: get_wear_factor(track_key, c)
+                for c in ("hard", "medium", "soft", "inter", "wet")
+            }
+            ttc = self._scenario["hidden_state"].setdefault("true_tyre_curve", {})
+            for compound in ("hard", "medium", "soft"):
+                grounded_curve = get_health_curve(track_key, compound)
+                if grounded_curve:
+                    ttc[compound] = grounded_curve
 
     def _exec(self, action: F1Action) -> tuple[float, str]:
         self._last_revelations = []
@@ -289,12 +313,20 @@ class F1StrategistEnvironment(Environment[F1Action, F1Observation, F1State]):
             self._ego_car.fuel_remaining_kg,
             int(self._scenario.get("seed", 0)) + self._lap * 19,
         )
+        # Sub-step 2.4: optional per-compound grounded wear factor
+        # (None when scenario doesn't opt in → 1.0 → no behaviour change).
+        grounded_factor = 1.0
+        if self._grounded_factors is not None:
+            grounded_factor = self._grounded_factors.get(
+                self._ego_car.current_compound, 1.0
+            )
         self._ego_car.tyre_health = step_tyre(
             self._ego_car.current_compound,
             self._ego_car.tyre_health,
             self._ego_car.drive_mode,
             self._track.track_character,
             weather.track_temp_c,
+            grounded_factor=grounded_factor,
         )
         self._ego_car.current_tyre_age += 1
         step_opponents(

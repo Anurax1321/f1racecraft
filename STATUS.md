@@ -9,14 +9,44 @@
 ## Cursor
 
 ```
-Phase:        1 (Full race length)
-Sub-step:     1.6 (next — close out Phase 1; tag v0.3-fullrace)
-Last commit:  on origin/dev (1.5 done — baseline measured + scorer hardened)
-Next action:  Tell user to push tag v0.3-fullrace once 1.5 is committed
+Phase:        2 (FastF1 grounding)
+Sub-step:     2.5 (next — replay mode "evaluate.py --replay 2024-monaco")
+Last commit:  on origin/dev (2.4 done — opt-in grounded calibration mechanism)
+Next action:  Build replay mode then close Phase 2
 Blocked on:   nothing
 Last session: 2026-04-28
 Owner:        Anurag (solo personal project, post-hackathon)
 ```
+
+## Phase 2 sub-step status
+
+| # | Sub-step | Status |
+|---|---|---|
+| 2.1 FastF1 cache + loader | ✅ done |
+| 2.2 Per-race feature extraction | ✅ done |
+| 2.3 Per-track aggregation | ✅ done — 69 races (3 seasons), 21 track aggregates, top-team filter, R²: 0.10–0.48 |
+| 2.4 Wire grounded into physics.py | ✅ done — opt-in mechanism (`use_grounded_calibration: True`). Default-off path unchanged. Spa expert verified to drop 0.99→0.46 with opt-in (correctly: real Spa eats tires harder than synthetic). 11 grounded tests added. |
+| 2.5 Replay mode | ⬜ next |
+| 2.6 Tag `v0.4-grounded` | ⬜ |
+
+## Sub-step 2.4 — what's in, what's NOT in
+
+**In:**
+- `server/grounded.py`: loader, per-track-per-compound `get_wear_factor()`,
+  `get_health_curve()`, `is_track_evolution_dominant()`, quality gates
+  (R² ≥ 0.05, n ≥ 50)
+- `server/physics.step_tyre()`: new optional `grounded_factor=1.0` param
+- `server/environment._load()`: when scenario sets
+  `use_grounded_calibration: True`, populates per-compound factors AND
+  overwrites `hidden_state.true_tyre_curve` with grounded curves so
+  physics + INSPECT stay consistent
+- 11 new tests in `tests/test_grounded.py`
+
+**NOT in (deliberate):**
+- No existing scenario opts in. Long-race scenarios (Monaco/Silverstone/Spa)
+  still use synthetic physics. Why: Spa's grounded factor is 1.73x for
+  medium — the synthetic-tuned expert sequence breaks (0.99 → 0.46).
+  Re-authoring experts for grounded mode is a separate task.
 
 ## Phase 3 baseline — what 14B GRPO has to beat
 

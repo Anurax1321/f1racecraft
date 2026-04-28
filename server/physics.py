@@ -191,15 +191,23 @@ def step_tyre(
     drive_mode: str,
     track_character: str,
     base_temp_c: float = 30.0,
+    grounded_factor: float = 1.0,
 ) -> float:
-    """Return tyre health after one lap."""
+    """Return tyre health after one lap.
+
+    ``grounded_factor`` (default 1.0): per-track-per-compound multiplier
+    derived from FastF1 data via ``server/grounded.get_wear_factor()``.
+    Default 1.0 leaves the physics identical to the pre-Phase-2 behaviour.
+    Scenarios opt in by setting ``use_grounded_calibration: True``; the env
+    then computes the per-compound factor at reset time and passes it here.
+    """
     tyres = _load_tyre_baseline()
     compound_row = tyres.get(compound, tyres["medium"])
     rate = float(compound_row.get("wear_rate", 0.045))
     track_mult = TRACK_TYRE_MULTIPLIER.get(track_character, 1.1)
     mode_mult = MODE_TABLE.get(drive_mode, MODE_TABLE[DEFAULT_MODE])["tyre_mult"]
     temp_mult = max(0.5, 1.0 + 0.01 * (float(base_temp_c) - 30.0))
-    delta = rate * track_mult * mode_mult * temp_mult
+    delta = rate * track_mult * mode_mult * temp_mult * float(grounded_factor)
     return max(0.0, min(1.0, float(current_health)) - delta)
 
 
