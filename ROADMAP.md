@@ -220,6 +220,21 @@ midrace stint" pattern.
 
 ---
 
+## Phase 6.5+ data refinement — Bayesian state-space tire model (earmarked)
+
+When linear regression on tire degradation isn't good enough, swap in
+Beatson 2025 ([arXiv:2512.00640](https://arxiv.org/abs/2512.00640)). It
+decomposes `lap_time = base + fuel(kg) + tire_pace(latent) + noise` with
+state-space inference, giving us per-stint latent tire pace separated from
+driver and traffic noise. The right answer when our R² stays low.
+
+Earmarked for: post-multi-agent (Phase 5+) data refinement, alongside
+per-lap weather filtering (B3 in `docs/calibration-decisions.md`). Not
+needed for Phase 3 training — the env's behavior tolerates approximate
+tire curves; what matters there is the *strategic patterns* in scenarios.
+
+---
+
 ## Phase 3 upgrade path — HCAPO (earmarked, not started)
 
 If 14B GRPO plateaus on long-race scenarios with ≤0.05 improvement over 4B,

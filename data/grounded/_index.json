@@ -120,8 +120,8 @@
   "country": "Monaco",
   "n_races": 3,
   "compounds": [
-   "hard",
-   "medium"
+   "medium",
+   "hard"
   ],
   "file": "monaco.json"
  },
@@ -213,9 +213,9 @@
   "country": "Netherlands",
   "n_races": 3,
   "compounds": [
-   "medium",
+   "soft",
    "hard",
-   "soft"
+   "medium"
   ],
   "file": "zandvoort.json"
  }

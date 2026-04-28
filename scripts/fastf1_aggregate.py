@@ -176,15 +176,19 @@ def aggregate_tyres(races: list[dict], *, top_teams_only: bool = True) -> dict:
     """
     by_stint: dict[tuple, list[dict]] = defaultdict(list)
     for race_idx, race in enumerate(races):
-        if race["metadata"]["wet_race"]:
-            continue
+        # Per-stint weather: a "wet race" can still have plenty of dry
+        # stints (e.g., Britain 2024 had laps 1-26 dry, then rain). We
+        # *don't* skip the whole race here — we filter per-lap below using
+        # the compound the driver was actually on. Soft/medium/hard imply
+        # the driver believed conditions were dry; INTERMEDIATE / WET
+        # would be filtered by the compound check.
         for r in race["lap_records"]:
             if not r["is_accurate"]:
                 continue
             if r["under_sc"] or r["under_vsc"]:
                 continue
             if r["compound"] not in DRY_COMPOUNDS:
-                continue
+                continue  # also drops INTERMEDIATE and WET stints
             if r["tyre_life"] <= 1 or r["lap_time_corrected_s"] <= 0:
                 continue
             if top_teams_only and r["team"] not in TOP_TEAMS:
