@@ -39,6 +39,14 @@ from server.fastf1_loader import GROUNDED_OUT_DIR, RAW_OUT_DIR
 DRY_COMPOUNDS = ("hard", "medium", "soft")
 WET_COMPOUNDS = ("inter", "wet")
 
+# Top teams — used to filter tire-degradation curves to consistent-pace cars.
+# Inter-team pace variance dominates the regression; restricting to top
+# teams isolates the actual tire signal. Same approach as Mercedes-AMG paper
+# (arXiv:2501.04067) which uses Mercedes-only data.
+TOP_TEAMS_2023_2024 = {"Red Bull Racing", "Mercedes", "McLaren", "Ferrari"}
+TOP_TEAMS_2025 = {"McLaren", "Ferrari", "Mercedes", "Red Bull Racing"}
+TOP_TEAMS = TOP_TEAMS_2023_2024 | TOP_TEAMS_2025
+
 
 def _country_to_track_key(country: str) -> str:
     """Country → short track key. 'United States' → 'austin' etc."""
@@ -149,17 +157,23 @@ def _fit_compound_curve(samples: list[tuple[int, float]], min_samples: int = 20)
     }
 
 
-def aggregate_tyres(races: list[dict]) -> dict:
+def aggregate_tyres(races: list[dict], *, top_teams_only: bool = True) -> dict:
     """Per-compound tire degradation curves with per-(driver, stint, race)
-    normalization.
+    normalization + optional top-team filter.
 
-    Why normalize: a raw regression of lap_time vs tyre_life mixes "how slow
-    each car is" with actual tire degradation. Hamilton vs Sargeant pace
-    differs by ~0.5s on identical tires; that variance dominates the
-    regression. Subtracting each (race, driver, stint)'s mean lap time
-    isolates the within-stint degradation slope.
+    Filters applied:
+      1. Wet races skipped entirely.
+      2. is_accurate=False, under_sc, under_vsc rows skipped (per Frontiers
+         AI 2025 Bi-LSTM paper — wet/SC laps are noise).
+      3. tyre_life > 1 (skips out-lap warmup).
+      4. ``top_teams_only=True`` restricts to top-4 constructors. Removes
+         inter-team pace variance per the Mercedes-AMG paper approach
+         (arXiv:2501.04067). Disable for full-field aggregation.
+
+    Per-stint normalization: each (race, driver, stint) gets its mean lap
+    time subtracted, isolating the *slope* component of degradation from
+    absolute pace differences.
     """
-    # Group laps by (race, driver, stint) for per-stint normalization
     by_stint: dict[tuple, list[dict]] = defaultdict(list)
     for race_idx, race in enumerate(races):
         if race["metadata"]["wet_race"]:
@@ -172,7 +186,9 @@ def aggregate_tyres(races: list[dict]) -> dict:
             if r["compound"] not in DRY_COMPOUNDS:
                 continue
             if r["tyre_life"] <= 1 or r["lap_time_corrected_s"] <= 0:
-                continue  # tyre_life > 1 skips out-lap noise
+                continue
+            if top_teams_only and r["team"] not in TOP_TEAMS:
+                continue
             key = (race_idx, r["driver"], r["stint"], r["compound"])
             by_stint[key].append(r)
 

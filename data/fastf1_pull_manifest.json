@@ -1,130 +1,51 @@
 {
   "summaries": [
     {
-      "year": 2023,
-      "gp": "Bahrain Grand Prix",
-      "ok": true,
-      "elapsed_s": 4.1,
-      "round": 1,
-      "gp_name": "Bahrain Grand Prix",
-      "track_name": "bahrain",
-      "total_laps": 57,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 11,
-      "weather_rows": 161,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Saudi Arabian Grand Prix",
-      "ok": true,
-      "elapsed_s": 4.0,
-      "round": 2,
-      "gp_name": "Saudi Arabian Grand Prix",
-      "track_name": "saudi_arabia",
-      "total_laps": 50,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 4,
-      "weather_rows": 148,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
+      "year": 2025,
       "gp": "Australian Grand Prix",
       "ok": true,
-      "elapsed_s": 5.9,
-      "round": 3,
+      "elapsed_s": 3.9,
+      "round": 1,
       "gp_name": "Australian Grand Prix",
       "track_name": "australia",
-      "total_laps": 58,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 23,
-      "weather_rows": 222,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Azerbaijan Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.4,
-      "round": 4,
-      "gp_name": "Azerbaijan Grand Prix",
-      "track_name": "azerbaijan",
-      "total_laps": 51,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 18,
-      "weather_rows": 160,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Miami Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.5,
-      "round": 5,
-      "gp_name": "Miami Grand Prix",
-      "track_name": "united_states",
       "total_laps": 57,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 5,
-      "weather_rows": 155,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Monaco Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.6,
-      "round": 6,
-      "gp_name": "Monaco Grand Prix",
-      "track_name": "monaco",
-      "total_laps": 78,
       "n_drivers": 20,
       "compounds_used": [
         "HARD",
         "INTERMEDIATE",
-        "MEDIUM",
-        "SOFT",
-        "WET"
+        "MEDIUM"
       ],
-      "n_track_status_events": 29,
-      "weather_rows": 176,
+      "n_track_status_events": 20,
+      "weather_rows": 178,
       "wet_race": true
     },
     {
-      "year": 2023,
-      "gp": "Spanish Grand Prix",
+      "year": 2025,
+      "gp": "Chinese Grand Prix",
       "ok": true,
-      "elapsed_s": 4.2,
-      "round": 7,
-      "gp_name": "Spanish Grand Prix",
-      "track_name": "spain",
-      "total_laps": 66,
+      "elapsed_s": 6.2,
+      "round": 2,
+      "gp_name": "Chinese Grand Prix",
+      "track_name": "china",
+      "total_laps": 56,
+      "n_drivers": 20,
+      "compounds_used": [
+        "HARD",
+        "MEDIUM"
+      ],
+      "n_track_status_events": 14,
+      "weather_rows": 154,
+      "wet_race": false
+    },
+    {
+      "year": 2025,
+      "gp": "Japanese Grand Prix",
+      "ok": true,
+      "elapsed_s": 6.2,
+      "round": 3,
+      "gp_name": "Japanese Grand Prix",
+      "track_name": "japan",
+      "total_laps": 53,
       "n_drivers": 20,
       "compounds_used": [
         "HARD",
@@ -132,394 +53,51 @@
         "SOFT"
       ],
       "n_track_status_events": 1,
-      "weather_rows": 154,
+      "weather_rows": 140,
       "wet_race": false
     },
     {
-      "year": 2023,
-      "gp": "Canadian Grand Prix",
-      "ok": true,
-      "elapsed_s": 6.3,
-      "round": 8,
-      "gp_name": "Canadian Grand Prix",
-      "track_name": "canada",
-      "total_laps": 70,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "None",
-        "SOFT"
-      ],
-      "n_track_status_events": 17,
-      "weather_rows": 162,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Austrian Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.9,
-      "round": 9,
-      "gp_name": "Austrian Grand Prix",
-      "track_name": "austria",
-      "total_laps": 71,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 9,
-      "weather_rows": 153,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "British Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.2,
-      "round": 10,
-      "gp_name": "British Grand Prix",
-      "track_name": "great_britain",
-      "total_laps": 52,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 5,
-      "weather_rows": 151,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Hungarian Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.7,
-      "round": 11,
-      "gp_name": "Hungarian Grand Prix",
-      "track_name": "hungary",
-      "total_laps": 70,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 5,
-      "weather_rows": 164,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Belgian Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.0,
-      "round": 12,
-      "gp_name": "Belgian Grand Prix",
-      "track_name": "belgium",
-      "total_laps": 44,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 11,
-      "weather_rows": 150,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Dutch Grand Prix",
-      "ok": true,
-      "elapsed_s": 6.6,
-      "round": 13,
-      "gp_name": "Dutch Grand Prix",
-      "track_name": "netherlands",
-      "total_laps": 72,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "INTERMEDIATE",
-        "MEDIUM",
-        "SOFT",
-        "WET"
-      ],
-      "n_track_status_events": 16,
-      "weather_rows": 209,
-      "wet_race": true
-    },
-    {
-      "year": 2023,
-      "gp": "Italian Grand Prix",
-      "ok": true,
-      "elapsed_s": 3.8,
-      "round": 14,
-      "gp_name": "Italian Grand Prix",
-      "track_name": "italy",
-      "total_laps": 51,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM"
-      ],
-      "n_track_status_events": 3,
-      "weather_rows": 156,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Singapore Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.7,
-      "round": 15,
-      "gp_name": "Singapore Grand Prix",
-      "track_name": "singapore",
-      "total_laps": 62,
-      "n_drivers": 19,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 20,
-      "weather_rows": 176,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Japanese Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.5,
-      "round": 16,
-      "gp_name": "Japanese Grand Prix",
-      "track_name": "japan",
-      "total_laps": 53,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 12,
-      "weather_rows": 158,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Qatar Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.3,
-      "round": 17,
-      "gp_name": "Qatar Grand Prix",
-      "track_name": "qatar",
-      "total_laps": 57,
-      "n_drivers": 19,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 8,
-      "weather_rows": 159,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "United States Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.8,
-      "round": 18,
-      "gp_name": "United States Grand Prix",
-      "track_name": "united_states",
-      "total_laps": 56,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 7,
-      "weather_rows": 168,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Mexico City Grand Prix",
-      "ok": true,
-      "elapsed_s": 6.1,
-      "round": 19,
-      "gp_name": "Mexico City Grand Prix",
-      "track_name": "mexico",
-      "total_laps": 71,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 21,
-      "weather_rows": 190,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "S\u00e3o Paulo Grand Prix",
-      "ok": true,
-      "elapsed_s": 6.1,
-      "round": 20,
-      "gp_name": "S\u00e3o Paulo Grand Prix",
-      "track_name": "brazil",
-      "total_laps": 71,
-      "n_drivers": 20,
-      "compounds_used": [
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 11,
-      "weather_rows": 183,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Las Vegas Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.4,
-      "round": 21,
-      "gp_name": "Las Vegas Grand Prix",
-      "track_name": "united_states",
-      "total_laps": 50,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 24,
-      "weather_rows": 108,
-      "wet_race": false
-    },
-    {
-      "year": 2023,
-      "gp": "Abu Dhabi Grand Prix",
-      "ok": true,
-      "elapsed_s": 4.0,
-      "round": 22,
-      "gp_name": "Abu Dhabi Grand Prix",
-      "track_name": "abu_dhabi",
-      "total_laps": 58,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 3,
-      "weather_rows": 156,
-      "wet_race": false
-    },
-    {
-      "year": 2024,
+      "year": 2025,
       "gp": "Bahrain Grand Prix",
       "ok": true,
-      "elapsed_s": 5.1,
-      "round": 1,
+      "elapsed_s": 4.7,
+      "round": 4,
       "gp_name": "Bahrain Grand Prix",
       "track_name": "bahrain",
       "total_laps": 57,
       "n_drivers": 20,
       "compounds_used": [
         "HARD",
+        "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 7,
-      "weather_rows": 157,
+      "n_track_status_events": 3,
+      "weather_rows": 158,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Saudi Arabian Grand Prix",
       "ok": true,
-      "elapsed_s": 3.7,
-      "round": 2,
+      "elapsed_s": 4.0,
+      "round": 5,
       "gp_name": "Saudi Arabian Grand Prix",
       "track_name": "saudi_arabia",
       "total_laps": 50,
       "n_drivers": 20,
       "compounds_used": [
         "HARD",
-        "MEDIUM",
-        "SOFT"
+        "MEDIUM"
       ],
-      "n_track_status_events": 5,
-      "weather_rows": 146,
+      "n_track_status_events": 4,
+      "weather_rows": 142,
       "wet_race": false
     },
     {
-      "year": 2024,
-      "gp": "Australian Grand Prix",
-      "ok": true,
-      "elapsed_s": 6.2,
-      "round": 3,
-      "gp_name": "Australian Grand Prix",
-      "track_name": "australia",
-      "total_laps": 58,
-      "n_drivers": 19,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 9,
-      "weather_rows": 144,
-      "wet_race": false
-    },
-    {
-      "year": 2024,
-      "gp": "Japanese Grand Prix",
-      "ok": true,
-      "elapsed_s": 4.6,
-      "round": 4,
-      "gp_name": "Japanese Grand Prix",
-      "track_name": "japan",
-      "total_laps": 53,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 6,
-      "weather_rows": 181,
-      "wet_race": false
-    },
-    {
-      "year": 2024,
-      "gp": "Chinese Grand Prix",
-      "ok": true,
-      "elapsed_s": 3.8,
-      "round": 5,
-      "gp_name": "Chinese Grand Prix",
-      "track_name": "china",
-      "total_laps": 56,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 9,
-      "weather_rows": 165,
-      "wet_race": false
-    },
-    {
-      "year": 2024,
+      "year": 2025,
       "gp": "Miami Grand Prix",
       "ok": true,
-      "elapsed_s": 5.6,
+      "elapsed_s": 5.3,
       "round": 6,
       "gp_name": "Miami Grand Prix",
       "track_name": "united_states",
@@ -528,17 +106,17 @@
       "compounds_used": [
         "HARD",
         "MEDIUM",
-        "SOFT"
+        "nan"
       ],
-      "n_track_status_events": 7,
-      "weather_rows": 150,
+      "n_track_status_events": 22,
+      "weather_rows": 149,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Emilia Romagna Grand Prix",
       "ok": true,
-      "elapsed_s": 6.1,
+      "elapsed_s": 6.3,
       "round": 7,
       "gp_name": "Emilia Romagna Grand Prix",
       "track_name": "italy",
@@ -546,18 +124,17 @@
       "n_drivers": 20,
       "compounds_used": [
         "HARD",
-        "MEDIUM",
-        "SOFT"
+        "MEDIUM"
       ],
-      "n_track_status_events": 7,
-      "weather_rows": 143,
+      "n_track_status_events": 8,
+      "weather_rows": 150,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Monaco Grand Prix",
       "ok": true,
-      "elapsed_s": 0.7,
+      "elapsed_s": 5.9,
       "round": 8,
       "gp_name": "Monaco Grand Prix",
       "track_name": "monaco",
@@ -568,73 +145,72 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 16,
-      "weather_rows": 200,
+      "n_track_status_events": 12,
+      "weather_rows": 160,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
+      "gp": "Spanish Grand Prix",
+      "ok": true,
+      "elapsed_s": 3.9,
+      "round": 9,
+      "gp_name": "Spanish Grand Prix",
+      "track_name": "spain",
+      "total_laps": 66,
+      "n_drivers": 19,
+      "compounds_used": [
+        "HARD",
+        "MEDIUM",
+        "SOFT"
+      ],
+      "n_track_status_events": 11,
+      "weather_rows": 155,
+      "wet_race": false
+    },
+    {
+      "year": 2025,
       "gp": "Canadian Grand Prix",
       "ok": true,
-      "elapsed_s": 6.0,
-      "round": 9,
+      "elapsed_s": 6.2,
+      "round": 10,
       "gp_name": "Canadian Grand Prix",
       "track_name": "canada",
       "total_laps": 70,
       "n_drivers": 20,
       "compounds_used": [
         "HARD",
-        "INTERMEDIATE",
-        "MEDIUM",
-        "WET"
-      ],
-      "n_track_status_events": 21,
-      "weather_rows": 113,
-      "wet_race": true
-    },
-    {
-      "year": 2024,
-      "gp": "Spanish Grand Prix",
-      "ok": true,
-      "elapsed_s": 4.1,
-      "round": 10,
-      "gp_name": "Spanish Grand Prix",
-      "track_name": "spain",
-      "total_laps": 66,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 2,
-      "weather_rows": 154,
+      "n_track_status_events": 10,
+      "weather_rows": 167,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Austrian Grand Prix",
       "ok": true,
-      "elapsed_s": 6.1,
+      "elapsed_s": 6.7,
       "round": 11,
       "gp_name": "Austrian Grand Prix",
       "track_name": "austria",
-      "total_laps": 71,
+      "total_laps": 70,
       "n_drivers": 20,
       "compounds_used": [
         "HARD",
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 6,
-      "weather_rows": 143,
+      "n_track_status_events": 14,
+      "weather_rows": 161,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "British Grand Prix",
       "ok": true,
-      "elapsed_s": 5.3,
+      "elapsed_s": 5.2,
       "round": 12,
       "gp_name": "British Grand Prix",
       "track_name": "united_kingdom",
@@ -646,16 +222,36 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 1,
-      "weather_rows": 147,
+      "n_track_status_events": 33,
+      "weather_rows": 155,
       "wet_race": true
     },
     {
-      "year": 2024,
+      "year": 2025,
+      "gp": "Belgian Grand Prix",
+      "ok": true,
+      "elapsed_s": 5.3,
+      "round": 13,
+      "gp_name": "Belgian Grand Prix",
+      "track_name": "belgium",
+      "total_laps": 44,
+      "n_drivers": 20,
+      "compounds_used": [
+        "HARD",
+        "INTERMEDIATE",
+        "MEDIUM",
+        "None"
+      ],
+      "n_track_status_events": 14,
+      "weather_rows": 223,
+      "wet_race": true
+    },
+    {
+      "year": 2025,
       "gp": "Hungarian Grand Prix",
       "ok": true,
-      "elapsed_s": 5.6,
-      "round": 13,
+      "elapsed_s": 5.7,
+      "round": 14,
       "gp_name": "Hungarian Grand Prix",
       "track_name": "hungary",
       "total_laps": 70,
@@ -665,31 +261,12 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 3,
-      "weather_rows": 155,
+      "n_track_status_events": 12,
+      "weather_rows": 157,
       "wet_race": false
     },
     {
-      "year": 2024,
-      "gp": "Belgian Grand Prix",
-      "ok": true,
-      "elapsed_s": 5.2,
-      "round": 14,
-      "gp_name": "Belgian Grand Prix",
-      "track_name": "belgium",
-      "total_laps": 44,
-      "n_drivers": 20,
-      "compounds_used": [
-        "HARD",
-        "MEDIUM",
-        "SOFT"
-      ],
-      "n_track_status_events": 4,
-      "weather_rows": 137,
-      "wet_race": false
-    },
-    {
-      "year": 2024,
+      "year": 2025,
       "gp": "Dutch Grand Prix",
       "ok": true,
       "elapsed_s": 5.8,
@@ -703,15 +280,15 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 3,
-      "weather_rows": 153,
+      "n_track_status_events": 20,
+      "weather_rows": 159,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Italian Grand Prix",
       "ok": true,
-      "elapsed_s": 3.9,
+      "elapsed_s": 4.4,
       "round": 16,
       "gp_name": "Italian Grand Prix",
       "track_name": "italy",
@@ -722,15 +299,15 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 1,
-      "weather_rows": 133,
+      "n_track_status_events": 6,
+      "weather_rows": 144,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Azerbaijan Grand Prix",
       "ok": true,
-      "elapsed_s": 6.0,
+      "elapsed_s": 6.7,
       "round": 17,
       "gp_name": "Azerbaijan Grand Prix",
       "track_name": "azerbaijan",
@@ -738,18 +315,17 @@
       "n_drivers": 20,
       "compounds_used": [
         "HARD",
-        "MEDIUM",
-        "SOFT"
+        "MEDIUM"
       ],
       "n_track_status_events": 20,
-      "weather_rows": 152,
+      "weather_rows": 156,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Singapore Grand Prix",
       "ok": true,
-      "elapsed_s": 5.5,
+      "elapsed_s": 5.9,
       "round": 18,
       "gp_name": "Singapore Grand Prix",
       "track_name": "singapore",
@@ -760,15 +336,15 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 4,
-      "weather_rows": 160,
+      "n_track_status_events": 14,
+      "weather_rows": 161,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "United States Grand Prix",
       "ok": true,
-      "elapsed_s": 5.4,
+      "elapsed_s": 5.6,
       "round": 19,
       "gp_name": "United States Grand Prix",
       "track_name": "united_states",
@@ -779,15 +355,15 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 11,
-      "weather_rows": 155,
+      "n_track_status_events": 19,
+      "weather_rows": 154,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Mexico City Grand Prix",
       "ok": true,
-      "elapsed_s": 6.0,
+      "elapsed_s": 6.4,
       "round": 20,
       "gp_name": "Mexico City Grand Prix",
       "track_name": "mexico",
@@ -798,33 +374,34 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 7,
-      "weather_rows": 159,
+      "n_track_status_events": 9,
+      "weather_rows": 162,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "S\u00e3o Paulo Grand Prix",
       "ok": true,
-      "elapsed_s": 5.4,
+      "elapsed_s": 5.5,
       "round": 21,
       "gp_name": "S\u00e3o Paulo Grand Prix",
       "track_name": "brazil",
-      "total_laps": 69,
-      "n_drivers": 19,
+      "total_laps": 71,
+      "n_drivers": 20,
       "compounds_used": [
-        "INTERMEDIATE",
-        "WET"
+        "HARD",
+        "MEDIUM",
+        "SOFT"
       ],
-      "n_track_status_events": 31,
-      "weather_rows": 201,
-      "wet_race": true
+      "n_track_status_events": 10,
+      "weather_rows": 152,
+      "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Las Vegas Grand Prix",
       "ok": true,
-      "elapsed_s": 5.5,
+      "elapsed_s": 5.1,
       "round": 22,
       "gp_name": "Las Vegas Grand Prix",
       "track_name": "united_states",
@@ -835,15 +412,15 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 3,
-      "weather_rows": 143,
+      "n_track_status_events": 16,
+      "weather_rows": 141,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Qatar Grand Prix",
       "ok": true,
-      "elapsed_s": 6.1,
+      "elapsed_s": 5.6,
       "round": 23,
       "gp_name": "Qatar Grand Prix",
       "track_name": "qatar",
@@ -854,15 +431,15 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 24,
-      "weather_rows": 151,
+      "n_track_status_events": 4,
+      "weather_rows": 149,
       "wet_race": false
     },
     {
-      "year": 2024,
+      "year": 2025,
       "gp": "Abu Dhabi Grand Prix",
       "ok": true,
-      "elapsed_s": 3.9,
+      "elapsed_s": 4.1,
       "round": 24,
       "gp_name": "Abu Dhabi Grand Prix",
       "track_name": "united_arab_emirates",
@@ -873,180 +450,12 @@
         "MEDIUM",
         "SOFT"
       ],
-      "n_track_status_events": 13,
-      "weather_rows": 148,
+      "n_track_status_events": 7,
+      "weather_rows": 154,
       "wet_race": false
-    },
-    {
-      "year": 2025,
-      "gp": "Australian Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.7,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Chinese Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.3,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Japanese Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Bahrain Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Saudi Arabian Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Miami Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Emilia Romagna Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Monaco Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Spanish Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Canadian Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Austrian Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "British Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Belgian Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Hungarian Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Dutch Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Italian Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Azerbaijan Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Singapore Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "United States Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Mexico City Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "S\u00e3o Paulo Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Las Vegas Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Qatar Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
-    },
-    {
-      "year": 2025,
-      "gp": "Abu Dhabi Grand Prix",
-      "ok": false,
-      "elapsed_s": 0.2,
-      "error": "any API: 500 calls/h"
     }
   ],
-  "cache_size_mb": 318.2,
-  "n_ok": 46,
-  "n_fail": 24
+  "cache_size_mb": 489.4,
+  "n_ok": 24,
+  "n_fail": 0
 }

@@ -87,6 +87,19 @@ def _is_under_sc_or_vsc(track_status: str) -> tuple[bool, bool]:
 # Per-lap extraction
 # ---------------------------------------------------------------------------
 
+def _safe_int(v, default: int = 0) -> int:
+    """int() but tolerant of NaN, None, and non-numeric values."""
+    if v is None:
+        return default
+    try:
+        f = float(v)
+        if f != f:  # NaN
+            return default
+        return int(f)
+    except (TypeError, ValueError):
+        return default
+
+
 def extract_lap_records(session) -> list[dict]:
     """One record per lap per driver, with fuel-corrected timing."""
     laps = session.laps
@@ -95,7 +108,9 @@ def extract_lap_records(session) -> list[dict]:
         lap_time_s = _td_to_seconds(row.get("LapTime"))
         if lap_time_s is None:
             continue
-        lap_n = int(row["LapNumber"]) if row.get("LapNumber") is not None else 0
+        lap_n = _safe_int(row.get("LapNumber"))
+        if lap_n <= 0:
+            continue  # skip rows without a valid lap number
         compound_raw = str(row.get("Compound") or "").upper()
         compound = COMPOUND_MAP.get(compound_raw, compound_raw.lower() or "unknown")
         track_status = str(row.get("TrackStatus") or "1")
@@ -106,10 +121,10 @@ def extract_lap_records(session) -> list[dict]:
             "driver_number": str(row.get("DriverNumber") or ""),
             "team": str(row.get("Team") or ""),
             "lap_number": lap_n,
-            "stint": int(row.get("Stint") or 0),
+            "stint": _safe_int(row.get("Stint")),
             "compound": compound,
             "compound_raw": compound_raw,
-            "tyre_life": int(row.get("TyreLife") or 0),
+            "tyre_life": _safe_int(row.get("TyreLife")),
             "fresh_tyre": bool(row.get("FreshTyre") or False),
             "lap_time_s": round(lap_time_s, 3),
             "fuel_corr_s": round(fuel_corr, 3),
@@ -124,7 +139,7 @@ def extract_lap_records(session) -> list[dict]:
             "pit_in": row.get("PitInTime") is not None and not _is_na(row.get("PitInTime")),
             "pit_out": row.get("PitOutTime") is not None and not _is_na(row.get("PitOutTime")),
             "is_accurate": bool(row.get("IsAccurate") or False),
-            "position": int(row["Position"]) if row.get("Position") is not None and not _is_na(row.get("Position")) else 0,
+            "position": _safe_int(row.get("Position")),
             "track_status": track_status,
             "track_status_decoded": _decode_track_status(track_status),
             "under_sc": under_sc,
