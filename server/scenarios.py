@@ -779,6 +779,8 @@ TYRE_CLIFF_MANAGEMENT: dict = {
 }
 
 
+from server.scenarios_long import LONG_SCENARIOS  # noqa: E402
+
 SCENARIOS: dict[str, dict] = {
     "dry_strategy_sprint": DRY_STRATEGY_SPRINT,
     "dry_strategy_sprint_monza": DRY_STRATEGY_SPRINT,
@@ -792,4 +794,6 @@ SCENARIOS: dict[str, dict] = {
     "virtual_safety_car_window_silverstone": VIRTUAL_SAFETY_CAR_WINDOW,
     "tyre_cliff_management": TYRE_CLIFF_MANAGEMENT,
     "tyre_cliff_management_suzuka": TYRE_CLIFF_MANAGEMENT,
+    # Long-race families (sub-step 1.2) — 55 laps each, multi-stop strategy
+    **LONG_SCENARIOS,
 }

@@ -10,9 +10,9 @@
 
 ```
 Phase:        1 (Full race length)
-Sub-step:     1.2 (next — add 3 long-race scenario families)
-Last commit:  on origin/dev (1.1 implemented; see "Phase 1 sub-step status")
-Next action:  Start 1.2 — hand-author monaco_full_gp, silverstone_full_gp, spa_full_wet
+Sub-step:     1.3 (next — re-tune reward shaping for long races)
+Last commit:  on origin/dev (1.2 done — 3 long-race scenarios added)
+Next action:  Start 1.3 — rebalance per-step revelation reward (currently dominates)
 Blocked on:   nothing
 Last session: 2026-04-28
 Owner:        Anurag (solo personal project, post-hackathon)
@@ -23,7 +23,7 @@ Owner:        Anurag (solo personal project, post-hackathon)
 | # | Sub-step | Status |
 |---|---|---|
 | 1.1 | Parametrize race length in scenarios.py + generator.py | ✅ done — `RACE_LENGTHS={short:12,medium:25,long:55}`, `scale_scenario_to_length()`, `race_length` param on generate() and env.reset() |
-| 1.2 | Add 3 long-race scenario families | ⬜ |
+| 1.2 | Add 3 long-race scenario families | ✅ done — `monaco_full_gp`, `silverstone_full_gp`, `spa_full_wet` in `server/scenarios_long.py`. 27 new tests. |
 | 1.3 | Re-tune reward shaping | ⬜ |
 | 1.4 | Verify expert solver ≥0.85 on long races | ⬜ |
 | 1.5 | Run grpo_v2 on long races (baseline measurement) | ⬜ |
