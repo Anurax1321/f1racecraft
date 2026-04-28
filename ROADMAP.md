@@ -481,6 +481,24 @@ A race replay with rolling commentary. With TTS: a watchable, listenable race.
 
 ---
 
+## Deferred / Parking Lot
+
+Items left from the hackathon era that aren't part of the "simulate a complete
+F1 race" vision. Not abandoned — just not on the critical path. Pull from this
+list only when there's a concrete reason to.
+
+- **Re-verify Colab notebook on T4** (was sub-step 0.6) — was a hackathon W1
+  deliverable. URLs are patched for the new repo so it's not actively broken.
+  Pull this back if/when we want a public reproducibility tutorial. Until then,
+  GPU training happens on the 5090 box, not Colab.
+- **Public HF Space** — see Phase 9.6. Decision deferred to v1.0.
+- **Old grpo_v1 model adapters** — exist on `Deltasthic` HF Hub + frozen on the
+  `deltasthicc` git remote. Not needed locally; `grpo_v2` is the champion.
+- **Strip 110 MB tokenizer cruft from git history** (was sub-step 0.4) —
+  irrelevant on the new repo (Option C migration started clean).
+
+---
+
 ## Prior bugs — never repeat
 
 The hackathon model hit five real bugs. Every future training run must verify
