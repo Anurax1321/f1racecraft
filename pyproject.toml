@@ -42,6 +42,11 @@ eval = [
     "pandas>=2.0.0",
     "tqdm>=4.66.0",
 ]
+data = [
+    # Phase 2 — FastF1 grounding. Pulls real F1 lap timing + telemetry from
+    # 2023-2025 to calibrate physics and scenarios. See docs/data-sources.md.
+    "fastf1>=3.8.0",
+]
 demo = [
     "gradio>=4.0.0",
     "pillow>=10.0.0",

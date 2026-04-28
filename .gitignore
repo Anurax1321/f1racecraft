@@ -77,6 +77,8 @@ notes-private-*/
 # Docker volumes / data caches that shouldn't be in git
 data/*.cache
 data/raw/
+data/fastf1_cache/
+data/grounded/raw/
 
 # IDE/VCS leftovers
 .mypy_cache/
