@@ -70,9 +70,9 @@ captures/*.jsonl
 htmlcov/
 .pytest_cache/
 
-# External research notes (private — never commit)
-[External]*.md
-!README.md
+# Local-only research notes (private; use this prefix for anything not to commit)
+notes-private-*.md
+notes-private-*/
 
 # Docker volumes / data caches that shouldn't be in git
 data/*.cache

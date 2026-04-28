@@ -94,6 +94,22 @@ Originally built for the Meta PyTorch OpenEnv Hackathon Grand Finale (April 2026
 
 MIT. See [`LICENSE`](LICENSE).
 
+## References
+
+Reward design and long-horizon RL choices in this project draw on:
+
+- **Thomas, D. et al.** *Explainable Reinforcement Learning for Formula One Race Strategy.* ACM SIGAPP 2025. [arXiv:2501.04068](https://arxiv.org/abs/2501.04068) — directly comparable F1 race-strategy RL system. Their explicit rejection of dense reward shaping ("we are unable to determine midway through a race whether a decision was good or not") informs our [reward philosophy](docs/reward-philosophy.md).
+
+- **HCAPO: Hindsight Credit Assignment for Long-Horizon LLM Agents.** [arXiv:2603.08754](https://arxiv.org/abs/2603.08754), 2026 — current SOTA for long-horizon LLM agents (sparse terminal reward + hindsight reweighting). Earmarked as the upgrade path for Phase 3 if 14B GRPO plateaus on long races. Beats vanilla GRPO by +13.8% on ALFWorld and +7.7% on WebShop.
+
+- **GRPO-λ.** [arXiv:2510.00194](https://arxiv.org/abs/2510.00194), 2025 — credit-assignment improvement to GRPO via eligibility-trace λ-returns.
+
+- **GTPO / GRPO-S: Token and Sequence-Level Reward Shaping with Policy Entropy.** [arXiv:2508.04349](https://arxiv.org/html/2508.04349v6), 2025 — entropy-weighted reward shaping for GRPO; alternative to HCAPO if hindsight reweighting underdelivers.
+
+- **Anthropic.** *Natural Emergent Misalignment from Reward Hacking in Production RL.* 2025. [PDF](https://assets.anthropic.com/m/74342f2c96095771/original/Natural-emergent-misalignment-from-reward-hacking-paper.pdf) — informs our "immunity by construction" stance (one-shot revelation rewards, capped per-episode shaping).
+
+- **Process Reward Models — A Survey.** [arXiv:2510.08049](https://arxiv.org/abs/2510.08049), 2025 — considered and rejected for race strategy (see [reward-philosophy.md](docs/reward-philosophy.md)) because individual race-strategy decisions can't be graded in isolation.
+
 ## Acknowledgments
 
-Architectural primitives (hidden-state reveal, multi-objective scoring, postmortem memory) ported from `OpsTwin Recovery Arena`. Track data from the open [racetrack-database](https://github.com/TUMFTM/racetrack-database) (MIT). Historical calibration from the Kaggle F1 World Championship dataset. Thanks to the Meta PyTorch, Hugging Face, and Unsloth teams for the hackathon.
+Architectural primitives (hidden-state reveal, multi-objective scoring, postmortem memory) ported from `OpsTwin Recovery Arena`. Track data from the open [racetrack-database](https://github.com/TUMFTM/racetrack-database) (MIT). Historical calibration from the Kaggle F1 World Championship dataset. Thanks to the Meta PyTorch, Hugging Face, and Unsloth teams for the original hackathon environment.
