@@ -264,6 +264,18 @@ def compute_multi_objective_scores(**kwargs) -> dict:
     if strategic >= 0.95 and comms >= 0.5:
         race = max(race, 0.90)
 
+    # Egregious-over-pit hard cap (sub-step 1.5 hardening).
+    # When n_pit_stops >> target, the env's position floor (start P5 of 5
+    # cars → can't drop lower) and tyre-refresh effect would otherwise let
+    # random-style pit-spam policies score artificially high. Cap the two
+    # dims that are vulnerable: race_result (didn't really finish well) and
+    # tyre_management (refresh-pit hides poor stint management).
+    n_pit_total = int(kwargs.get("n_pit_stops", len(pit_decisions)))
+    target_pits = int(criteria.get("target_n_pits", kwargs.get("target_n_pits", 1)))
+    if n_pit_total > target_pits + 3:
+        race = min(race, 0.30)
+        tyre = min(tyre, 0.30)
+
     dims = {
         "race_result": _clamp01(race),
         "strategic_decisions": _clamp01(strategic),

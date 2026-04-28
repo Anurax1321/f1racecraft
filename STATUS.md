@@ -10,13 +10,28 @@
 
 ```
 Phase:        1 (Full race length)
-Sub-step:     1.5 (next — run grpo_v2 on long-race families to get baseline)
-Last commit:  on origin/dev (1.4 done — long-race expert sequences ≥0.85)
-Next action:  Run evaluate.py with grpo_v2/merged on the 3 long-race families
+Sub-step:     1.6 (next — close out Phase 1; tag v0.3-fullrace)
+Last commit:  on origin/dev (1.5 done — baseline measured + scorer hardened)
+Next action:  Tell user to push tag v0.3-fullrace once 1.5 is committed
 Blocked on:   nothing
 Last session: 2026-04-28
 Owner:        Anurag (solo personal project, post-hackathon)
 ```
+
+## Phase 3 baseline — what 14B GRPO has to beat
+
+From `results/eval_long_races_v2.json` (5 seeds × 3 long families):
+
+| Mode | Monaco | Silverstone | Spa | **Avg** |
+|---|---:|---:|---:|---:|
+| Random | 0.310 | 0.310 | 0.290 | **0.303** |
+| Untrained Qwen3-4B | 0.533 | 0.458 | 0.458 | **0.483** |
+| **Trained grpo_v2** | 0.474 | 0.472 | 0.457 | **0.468** |
+| Expert | 0.865 | 0.899 | 0.990 | **0.918** |
+
+The current 4B model (trained on 12-15 lap races) is **statistically tied with
+the untrained baseline on long races** — confirms the ROADMAP prediction.
+Phase 3's 14B GRPO needs to close the **0.45 gap to expert**.
 
 ## Phase 1 sub-step status
 
@@ -26,7 +41,7 @@ Owner:        Anurag (solo personal project, post-hackathon)
 | 1.2 | Add 3 long-race scenario families | ✅ done — `monaco_full_gp`, `silverstone_full_gp`, `spa_full_wet` in `server/scenarios_long.py`. 27 new tests. |
 | 1.3 | Re-tune reward shaping | ✅ done — multi-window scoring fix (BUG), ops-efficiency tuning (0.45→0.30), `docs/reward-philosophy.md` (PHILOSOPHY), `scripts/reward_audit.py` (DIAGNOSTIC). Validated via literature: F1-RL community + HCAPO both reject dense shaping. |
 | 1.4 | Verify expert solver ≥0.85 on long races | ✅ done — Monaco 0.965, Silverstone 0.959, Spa 0.990 (avg over seeds 7/11/42). All beat panic by ≥0.50. Tests added: `test_expert_sequence_scores_above_floor`, `test_expert_beats_panic`. |
-| 1.5 | Run grpo_v2 on long races (baseline measurement) | ⬜ |
+| 1.5 | Run grpo_v2 on long races (baseline measurement) | ✅ done — baseline established (trained 0.468, untrained 0.483, expert 0.918, gap-to-expert ≈0.45). **Found and fixed** scorer bug: pit-spam scored 0.66 on Silverstone (random > trained!). Added over-pit hard cap on `race_result` and `tyre_management` for `n_pits > target+3`. Fix would have ruined Phase 3 training. |
 | 1.6 | Tag `v0.3-fullrace` | ⬜ |
 
 ## Known limitation from 1.1

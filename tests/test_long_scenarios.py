@@ -146,3 +146,20 @@ def test_expert_beats_panic(family):
     p_score, _ = run_sequence(SCENARIOS[family], PANIC_SEQUENCES[family], seed=7)
     assert e_score - p_score >= 0.20, \
         f"{family}: expert {e_score:.3f} - panic {p_score:.3f} = {e_score-p_score:+.3f} (need >=0.20)"
+
+
+@pytest.mark.parametrize("family", LONG_FAMILIES)
+def test_overpit_does_not_score_higher_than_untrained(family):
+    """Sub-step 1.5 hardening: a pit-spam policy must NOT outscore the
+    no-op (untrained) baseline. Found during 1.5 baseline measurement —
+    random pit-spam scored 0.66 on Silverstone before the over-pit cap.
+    """
+    from baselines.expert_solver import run_sequence
+    pit_spam = ["PIT_NOW soft"] * 25 + ["DONE"]  # 25 pits — egregious over-pit
+    no_op = ["STAY_OUT"] * 55 + ["DONE"]
+    overpit_score, _ = run_sequence(SCENARIOS[family], pit_spam, seed=7)
+    noop_score, _ = run_sequence(SCENARIOS[family], no_op, seed=7)
+    assert overpit_score <= noop_score + 0.10, (
+        f"{family}: pit-spam {overpit_score:.3f} > no-op {noop_score:.3f} + 0.10 — "
+        f"over-pit cap not working"
+    )
