@@ -10,9 +10,9 @@
 
 ```
 Phase:        0 (Foundation cleanup)
-Sub-step:     0.7 (next — add scripts/ wrappers for train/eval/serve/race)
+Sub-step:     0.8 (next — tag v0.2-foundation; close out Phase 0)
 Last commit:  a18aa20 (updated and step 0 in progress) on origin/dev
-Next action:  Start 0.7 — write idempotent shell wrappers
+Next action:  Commit pending changes, then `git tag v0.2-foundation && git push --tags`
 Blocked on:   nothing
 Last session: 2026-04-28
 Owner:        Anurag (solo personal project, post-hackathon)
@@ -109,7 +109,7 @@ For the full plan see [`ROADMAP.md`](ROADMAP.md).
 | 0.4 | Strip 110 MB tokenizer cruft from git | ✅ skipped — new repo never committed it (Option C migration) |
 | 0.5 | Decide & act on Gradio `/web` | ✅ done — dropped (openenv shim doesn't support it; SSE `/dashboard` planned for Phase 7 instead). Code cleanup applied to `server/app.py`. |
 | 0.6 | Re-run Colab on T4 | ⏭️ deferred — hackathon artifact, not core to the vision. URLs patched so it's not broken; verification parked in `Deferred / Parking Lot` (ROADMAP.md). |
-| 0.7 | Add `scripts/` wrappers | ⬜ |
+| 0.7 | Add `scripts/` wrappers | ✅ done — `serve.sh`, `eval.sh`, `train.sh`, `race.sh`. Idempotent. README updated. |
 | 0.8 | Tag `v0.2-foundation` | ⬜ |
 
 ---

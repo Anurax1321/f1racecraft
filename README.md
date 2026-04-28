@@ -40,8 +40,10 @@ notebooks/   Colab training notebook
 
 ```bash
 uv sync
-python -m server.app                       # start the env
-python inference.py --task weather_roulette  # run one race
+./scripts/serve.sh        # dev server, auto-reload, http://127.0.0.1:8765
+./scripts/race.sh         # one race, default scenario, heuristic policy
+./scripts/eval.sh         # full eval against the trained champion
+./scripts/train.sh smoke  # CPU dry-run (no GPU); use `grpo` for the real thing
 ```
 
 Visit [`http://127.0.0.1:8765/f1_LLM_racing`](http://127.0.0.1:8765/f1_LLM_racing) to see the project page locally.
