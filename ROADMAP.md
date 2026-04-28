@@ -193,6 +193,20 @@ actual calls, side by side.
 
 ---
 
+## Phase 3 upgrade path — HCAPO (earmarked, not started)
+
+If 14B GRPO plateaus on long-race scenarios with ≤0.05 improvement over 4B,
+implement HCAPO-style hindsight credit reweighting per
+[arXiv:2603.08754](https://arxiv.org/abs/2603.08754). HCAPO beats vanilla GRPO
+by +13.8% on ALFWorld and +7.7% on WebShop (long-horizon LLM-agent benchmarks)
+using sparse terminal reward + post-hoc credit reweighting.
+
+Why this is an *upgrade path* and not the default: it's a trainer modification
+(adds a hindsight Q-value term to GRPO advantages), not an environment change.
+Phase 1.3 reward philosophy stands; HCAPO sits on top of it.
+
+---
+
 ## Phase 3 — Bigger model (Qwen3-14B)
 
 **Goal:** upgrade from 4B to 14B and prove it's better.

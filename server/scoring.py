@@ -158,10 +158,16 @@ def compute_operational_efficiency(
     total_laps: int,
     steps_used: int,
 ) -> float:
+    # Per docs/reward-philosophy.md: pit-count error is already penalized
+    # heavily through strategic_decisions (missed window) and race_result
+    # (DNF / poor finish). Operational dim should not double-penalize at
+    # 0.45 — that pushed long-race scores toward the floor when only one
+    # stop got mistimed. 0.30 leaves headroom for race_result + tyre to
+    # carry the long-horizon signal.
     pit_score = (
         1.0
         if n_pit_stops == target_n_pits
-        else max(0.0, 1.0 - 0.45 * abs(n_pit_stops - target_n_pits))
+        else max(0.0, 1.0 - 0.30 * abs(n_pit_stops - target_n_pits))
     )
     penalty = 0.12 * invalid_actions + 0.18 * harmful_actions
     if steps_used > total_laps + 8:
@@ -204,6 +210,7 @@ def compute_multi_objective_scores(**kwargs) -> dict:
         forecast_before,
         undercut_before,
     )
+    second_window = criteria.get("second_pit_window")
     strategic = _scenario_strategy_adjustment(
         scenario_family,
         strategic,
@@ -217,6 +224,7 @@ def compute_multi_objective_scores(**kwargs) -> dict:
         inspection_calls,
         n_pit_stops=int(kwargs.get("n_pit_stops", len(pit_decisions))),
         target_n_pits=int(criteria.get("target_n_pits", kwargs.get("target_n_pits", 1))),
+        second_window=tuple(second_window) if second_window else None,
     )
 
     tyre = compute_tyre_management(
@@ -282,6 +290,7 @@ def _scenario_strategy_adjustment(
     inspection_calls: dict,
     n_pit_stops: int = 0,
     target_n_pits: int = 1,
+    second_window: tuple[int, int] | None = None,
 ) -> float:
     """Family-specific strict scoring of the strategic dimension.
 
@@ -363,6 +372,26 @@ def _scenario_strategy_adjustment(
     if scenario_family == "tyre_cliff_management":
         # Reward inspecting tyre degradation before the cliff pit.
         result = 1.0 if insp_ok else 0.45
+        return min(result, over_pit_cap)
+
+    # ────────────────────────────────────────────────────────────────────
+    # Multi-stop scenarios (long-race families introduced in sub-step 1.2).
+    # Require a pit in BOTH windows when target_n_pits >= 2 and
+    # second_window is set. This closes the bug where an incomplete 1-stop
+    # play scored identically to a complete 2-stop play.
+    # ────────────────────────────────────────────────────────────────────
+    if target_n_pits >= 2 and second_window is not None:
+        s_lo, s_hi = second_window
+        second_pit_in_window = any(
+            s_lo <= int(p.get("lap", 0)) <= s_hi for p in pit_decisions
+        )
+        first_ok = bool(matching_pits)  # already in optimal window
+        if first_ok and second_pit_in_window:
+            result = 1.0
+        elif first_ok or second_pit_in_window:
+            result = 0.55  # one window hit, other missed
+        else:
+            result = 0.30  # both missed (shouldn't reach here — caught above)
         return min(result, over_pit_cap)
 
     return min(base, over_pit_cap)
