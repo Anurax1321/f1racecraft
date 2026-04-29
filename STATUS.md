@@ -9,11 +9,11 @@
 ## Cursor
 
 ```
-Phase:        2 (FastF1 grounding)
-Sub-step:     2.5 (next — replay mode "evaluate.py --replay 2024-monaco")
-Last commit:  on origin/dev (2.4 done — opt-in grounded calibration mechanism)
-Next action:  Build replay mode then close Phase 2
-Blocked on:   nothing
+Phase:        2 (FastF1 grounding) — closing
+Sub-step:     2.6 (tag v0.4-grounded; user action)
+Last commit:  on origin/dev (2.5 done — replay mode + 6 tests)
+Next action:  User merges dev→main, tags v0.4-grounded, pushes tag
+Blocked on:   user merge + tag push
 Last session: 2026-04-28
 Owner:        Anurag (solo personal project, post-hackathon)
 ```
@@ -26,8 +26,8 @@ Owner:        Anurag (solo personal project, post-hackathon)
 | 2.2 Per-race feature extraction | ✅ done |
 | 2.3 Per-track aggregation | ✅ done — 69 races (3 seasons), 21 track aggregates, top-team filter, R²: 0.10–0.48 |
 | 2.4 Wire grounded into physics.py | ✅ done — opt-in mechanism (`use_grounded_calibration: True`). Default-off path unchanged. Spa expert verified to drop 0.99→0.46 with opt-in (correctly: real Spa eats tires harder than synthetic). 11 grounded tests added. |
-| 2.5 Replay mode | ⬜ next |
-| 2.6 Tag `v0.4-grounded` | ⬜ |
+| 2.5 Replay mode | ✅ done — `server/replay.py` builds scenarios from extracted FastF1 data; `scripts/replay.py` runs comparison; 6 tests; opts in to grounded calibration |
+| 2.6 Tag `v0.4-grounded` | ⏸️ user action |
 
 ## Sub-step 2.4 — what's in, what's NOT in
 
